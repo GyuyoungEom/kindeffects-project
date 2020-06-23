@@ -32,7 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'effects',
-    'django-extension',
+    'accounts',
+    'django-extensions',
     'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',

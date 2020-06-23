@@ -9,11 +9,11 @@ class Store(models.Model):
     service = models.TextField()
 
 
-class Partner(models.Model) :
-    account = models.CharField(max_length=100)
-    pwd = models.CharField(max_length=100)
-    hp = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100)
+# class Partner(models.Model) :
+#     account = models.CharField(max_length=100)
+#     pwd = models.CharField(max_length=100)
+#     hp = models.CharField(max_length=100)
+#     email = models.EmailField(max_length=100)
     
 
 class Map(models.Model):
