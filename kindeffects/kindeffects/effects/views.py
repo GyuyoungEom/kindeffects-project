@@ -24,3 +24,7 @@ def store_new(request):
         'form': form,
     }
     return render(request, 'effects/store_new.html', context)
+
+
+def home(request):
+    return render(request, 'effects/home.html')
