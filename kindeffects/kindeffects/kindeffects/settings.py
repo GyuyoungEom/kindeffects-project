@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'k*k0s_n)o1kt^#dfhg$2=+3uq81470wd%cfh8)o#@nhsq5nhl0'
+SECRET_KEY = '-vvk^r!sesb4u6@6z=#iy8^2q@)u5q8=h*8p=gkk!49=!04&4w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,10 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'effects',
+    'maps',
     'accounts',
-    'django_extensions',
+    'stores',
     'bootstrap4',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,3 +126,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'kindeffects','static'),
 ]
+AUTH_USER_MODEL = 'accounts.User'

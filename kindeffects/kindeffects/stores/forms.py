@@ -1,5 +1,5 @@
 from django import forms
-from .models import Store, Map
+from .models import Store
 
 class StoreForm(forms.ModelForm):
     open_hour = forms.CharField(
@@ -25,16 +25,4 @@ class StoreForm(forms.ModelForm):
     )
     class Meta:
         model = Store
-        fields = '__all__'
-
-
-# class PartnerForm(forms.ModelForm):
-#     class Meta:
-#         model = Partner
-#         fields = '__all__'
-
-
-class MapForm(forms.ModelForm):
-    class Meta:
-        model = Map
         fields = '__all__'
