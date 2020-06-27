@@ -7,4 +7,4 @@ class Store(models.Model):
     addr = models.CharField(max_length=500)
     open_hour = models.TimeField()
     closed_hour = models.TimeField()
-    service = models.TextField()
+    service = models.TextField()    

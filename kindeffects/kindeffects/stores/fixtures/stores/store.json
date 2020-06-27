@@ -1,0 +1,50 @@
+[
+{
+    "model": "stores.store",
+    "pk": 1,
+    "fields": {
+        "name": "\uc774\ucee4\ud53c(e-coffee)",
+        "num": "02-2292-6667",
+        "addr": "\uc11c\uc6b8 \uc131\ub3d9\uad6c \ubb34\ud559\ubd09\uae38 87, 1\uce35 \uc774\ucee4\ud53c",
+        "open_hour": "10:00:00",
+        "closed_hour": "22:00:00",
+        "service": "\uce74\ub4dc \uc18c\uc9c0\uc790, \uc18c\ubc29\uacf5\ubb34\uc6d0 + \ub3d9\ubc181\uc778 \uc804\uba54\ub274 \ubb34\uc0c1\uc81c\uacf5"
+    }
+},
+{
+    "model": "stores.store",
+    "pk": 2,
+    "fields": {
+        "name": "\ubc30\ub2ec\uc9dc\uae00oh\uc9dc\uae00 \uc548\uc0b0\uc0c1\ub85d\uc810, \uafc0\ub2e8\uc9c0\ub9cc\uc6d0\ud3ec\ucc28",
+        "num": "031-512-1459",
+        "addr": "\uacbd\uae30\ub3c4 \uc548\uc0b0\uc2dc \uc0c1\ub85d\uad6c \ubcf8\uc624\ub3d9 859\ubc88\uc9c0 1\uce35",
+        "open_hour": "11:00:00",
+        "closed_hour": "01:00:00",
+        "service": "\uc18c\ubc29\uacf5\ubb34\uc6d0 + \ub3d9\ubc181\uc778 \uc804\uba54\ub274 \uc81c\uacf5"
+    }
+},
+{
+    "model": "stores.store",
+    "pk": 3,
+    "fields": {
+        "name": "\uc720\uac00\ub124 \ub2ed\uac08\ube44 \uc6b4\uc11c\uc5ed\uc810",
+        "num": "032-751-9255",
+        "addr": "\uc778\ucc9c \uc911\uad6c \uc2e0\ub3c4\uc2dc\ub0a8\ub85c 142\ubc88\uae38 1",
+        "open_hour": "11:00:00",
+        "closed_hour": "22:00:00",
+        "service": "\uce74\ub4dc \uc18c\uc9c0\uc790 \ubcf8\uc778\ub9cc \ucca0\ud310\ubcf6\uc74c\ubc25 \ub3c4\uc2dc\ub77d \uc804\uba54\ub274 \uc911 1\uac1c"
+    }
+},
+{
+    "model": "stores.store",
+    "pk": 4,
+    "fields": {
+        "name": "\ub0ad\ub9cc\uc170\ud504\ub77c\uba58",
+        "num": "070-4647-1118",
+        "addr": "\uc778\ucc9c \ub0a8\ub3d9\uad6c \ub9cc\uc218\ub85c45\ubc88\uae38 15 1\uce35 6\ud638",
+        "open_hour": "11:00:00",
+        "closed_hour": "22:00:00",
+        "service": "\uce74\ub4dc \uc18c\uc9c0\uc790, \uc18c\ubc29\uacf5\ubb34\uc6d0 \uc804\uba54\ub274 \uc81c\uacf5"
+    }
+}
+]

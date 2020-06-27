@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">store list</h1>
+    <a href="{% url 'stores:store_new' %}" class="btn btn-primary">정보작성</a>
+    <hr>
+    <table>
+        <thead>
+           <td>name</td> 
+           <td>num</td> 
+           <td>addr</td> 
+           <td>open_hour</td> 
+           <td>closed_hour</td> 
+           <td>service</td> 
+        </thead>
+        {% for store in stores %}
+            <tr>
+                <td>{{ store.name }}</td>
+                <td>{{ store.num }}</td>
+                <td>{{ store.addr }}</td>
+                <td>{{ store.open_hour }}</td>
+                <td>{{ store.closed_hour }}</td>
+                <td>{{ store.service }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+{% endblock %}
