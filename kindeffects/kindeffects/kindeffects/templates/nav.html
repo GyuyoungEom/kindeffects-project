@@ -26,50 +26,34 @@
             <!-- Nav Start -->
             <div class="classynav">
               <ul id="nav">
-                <li class="current-item"><a href="./index.html">Home</a></li>
-                <li><a href="#">Pages</a>
-                  <ul class="dropdown">
-                    <li><a href="./index.html">- Home</a></li>
-                    <li><a href="./about.html">- About Us</a></li>
-                    <li><a href="./projects.html">- Projects</a></li>
-                    <li><a href="./models.html">- Models</a></li>
-                    <li><a href="./casting.html">- Casting</a></li>
-                    <li><a href="./blog.html">- Blog</a></li>
-                    <li><a href="./single-blog.html">- Blog Details</a></li>
-                    <li><a href="./contact.html">- Contact</a></li>
-                    <li><a href="#">- Dropdown</a>
-                      <ul class="dropdown">
-                        <li><a href="#">- Dropdown Item</a></li>
-                        <li><a href="#">- Dropdown Item</a>
-                          <ul class="dropdown">
-                            <li><a href="#">- Even Dropdown</a></li>
-                            <li><a href="#">- Even Dropdown</a></li>
-                            <li><a href="#">- Even Dropdown</a></li>
-                            <li><a href="#">- Even Dropdown</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#">- Dropdown Item</a></li>
-                        <li><a href="#">- Dropdown Item</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="./projects.html">Project</a></li>
-                <li><a href="./models.html">Models</a></li>
-                <li><a href="./casting.html">Casting</a></li>
-                <li><a href="#">Blog</a>
-                  <ul class="dropdown">
-                    <li><a href="./blog.html">- Blog</a></li>
-                    <li><a href="./single-blog.html">- Blog Details</a></li>
-                  </ul>
-                </li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li class="current-item"><i class="fas fa-sign-in-alt"></i></li>
+                <li class="current-item"><a href="{% url 'maps:index' %}">Home</a></li>
+                {% comment %} <li><a href="{% url 'maps:about' %}">About Us</a></li> {% endcomment %}
+                <li><a href="{% url 'stores:index' %}">Stores</a></li>
+                {% if user.is_authenticated %} 
+                  <li><a href="#">Mypage</a>
+                    <ul class="dropdown">
+                      <li><a href="{% url 'accounts:update' %}">- MyPage</a></li>
+                      <li><a href="#">- QR생성</a></li>
+                    </ul> 
+                  </li>
+                {% endif %}
               </ul>
 
               <!-- Search Icon -->
-              <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+              {% comment %} <div class="search-icon" data-toggle="modal" data-target="#searchModal">
                 <i class="icon_search"></i>
-              </div>
+              </div> {% endcomment %}
+              
+              {% if user.is_authenticated %}  
+                <div class="search-icon logout" data-toggle="modal" data-target="#signOutModal">
+                  <i class="fas fa-sign-out-alt"></i>
+                </div>
+              {% else %}
+                <div class="search-icon sign-in" data-toggle="modal" data-target="#signInModal">
+                  <i class="fas fa-sign-in-alt"></i>
+                </div>
+              {% endif %}
             </div>
             <!-- Nav End -->
 
@@ -77,3 +61,5 @@
         </nav>
       </div>
     </div>
+    
+

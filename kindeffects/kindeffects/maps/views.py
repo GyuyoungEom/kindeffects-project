@@ -1,5 +1,9 @@
 from django.shortcuts import render
 
 # Create your views here.
-def home(request):
-    return render(request, 'maps/home.html')
+def index(request):
+    return render(request, 'maps/index.html')
+
+
+def map(request):
+    return render(request, 'maps/map.html')

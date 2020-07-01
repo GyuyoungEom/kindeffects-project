@@ -1,7 +1,13 @@
 from django import forms
 # from .models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth import get_user_model
+
+class CustomUserChangeForm(UserChangeForm):
+    class Meta:
+        model = get_user_model()
+        fields = ('name_kr', 'phone', 'store_regist', )
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -24,6 +30,7 @@ class CustomUserCreationForm(UserCreationForm):
         label='사업자 등록번호'
     )
 
-    class Meta:
+    class Meta():
         model = get_user_model()
-        fields = ['username', 'password1', 'password2', 'phone', 'name_kr', 'store_regist', ]
+        fields = ('username', 'password1', 'password2', 'name_kr', 'phone', 'store_regist', 'store')
+        # fields = '__all__'

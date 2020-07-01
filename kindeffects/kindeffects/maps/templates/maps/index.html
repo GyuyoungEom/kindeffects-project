@@ -1,0 +1,371 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+      <div class="cssload-loader"></div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <!-- Main Header Start -->
+    <div class="main-header-area">
+      <div class="classy-nav-container breakpoint-off">
+        <!-- Classy Menu -->
+        <nav class="classy-navbar justify-content-between" id="monaNav">
+    
+          <div class="bg-curve" style="background-image: url({% static '/img/core-img/curve.png' %});"></div>
+
+          <!-- Logo -->
+          <a class="nav-brand" href="index.html"><img src="{% static '/img/core-img/logo.png' %}" alt=""></a>
+
+          <!-- Navbar Toggler -->
+          <div class="classy-navbar-toggler">
+            <span class="navbarToggler"><span></span><span></span><span></span></span>
+          </div>
+
+          <!-- Menu -->
+          <div class="classy-menu">
+            <!-- Menu Close Button -->
+            <div class="classycloseIcon">
+              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+            </div>
+
+            <!-- Nav Start -->
+            <div class="classynav">
+              <ul id="nav">
+                <li class="current-item"><a href="./index.html">Home</a></li>
+                <li><a href="#">Pages</a>
+                  <ul class="dropdown">
+                    <li><a href="./index.html">- Home</a></li>
+                    <li><a href="./about.html">- About Us</a></li>
+                    <li><a href="./projects.html">- Projects</a></li>
+                    <li><a href="./models.html">- Models</a></li>
+                    <li><a href="./casting.html">- Casting</a></li>
+                    <li><a href="./blog.html">- Blog</a></li>
+                    <li><a href="./single-blog.html">- Blog Details</a></li>
+                    <li><a href="./contact.html">- Contact</a></li>
+                    <li><a href="#">- Dropdown</a>
+                      <ul class="dropdown">
+                        <li><a href="#">- Dropdown Item</a></li>
+                        <li><a href="#">- Dropdown Item</a>
+                          <ul class="dropdown">
+                            <li><a href="#">- Even Dropdown</a></li>
+                            <li><a href="#">- Even Dropdown</a></li>
+                            <li><a href="#">- Even Dropdown</a></li>
+                            <li><a href="#">- Even Dropdown</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">- Dropdown Item</a></li>
+                        <li><a href="#">- Dropdown Item</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="./projects.html">Project</a></li>
+                <li><a href="./models.html">Models</a></li>
+                <li><a href="./casting.html">Casting</a></li>
+                <li><a href="#">Blog</a>
+                  <ul class="dropdown">
+                    <li><a href="./blog.html">- Blog</a></li>
+                    <li><a href="./single-blog.html">- Blog Details</a></li>
+                  </ul>
+                </li>
+                <li><a href="./contact.html">Contact</a></li>
+              </ul>
+
+              <!-- Search Icon -->
+              <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                  <i class="icon_search"></i>
+              </div>
+            </div>
+            <!-- Nav End -->
+
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Top Search Area Start ***** -->
+  <div class="top-search-area">
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <!-- Close Button -->
+            <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+            <!-- Form -->
+            <form action="index.html" method="post">
+              <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Top Search Area End ***** -->
+
+  <!-- ***** Welcome Area Start ***** -->
+  <section class="welcome-area">
+    <!-- Welcome Slides -->
+    <div class="welcome-slides owl-carousel">
+
+      <!-- Single Welcome Slide -->
+      <div class="single-welcome-slide">
+        <!-- Background Curve -->
+        <div class="bg-curve" style="background-image: url(./img/core-img/curve.png);"></div>
+        <!-- Main Background Image -->
+
+        {% comment %} <div id="map" data-animation="fadeInUpBig" data-delay="200ms" style="width:500px;height:400px;"></div> {% endcomment %}
+        {% comment %} <div data-animation="fadeInUpBig" data-delay="200ms" style="background-image: url(./img/bg-img/18.jpg);"></div> {% endcomment %}
+        
+        <!-- Welcome Text -->
+        {% comment %} <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <div class="welcome-text">
+                <h2 data-animation="bounceInUp" data-delay="400ms">선한영향력 <br>
+                  지도</h2>
+                <h5 data-animation="bounceInUp" data-delay="600ms">선한영향력 업체</h5>
+                <a href="http://127.0.0.1:8000/maps/" class="btn" data-animation="bounceInUp" data-delay="800ms">업체더보기 <i class="arrow_right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div> {% endcomment %}
+        <!-- Social Info -->
+        {% comment %} <div class="social-info">
+          
+        </div> {% endcomment %}
+        <!-- Pager -->
+        <div class="slide-pager">
+          <a href="#">Next: 선한영향력 이벤트</a>
+        </div>
+      </div>
+
+      <!-- Single Welcome Slide2 -->
+      <div class="single-welcome-slide">
+        <!-- Background Curve -->
+        <div class="bg-curve" style="background-image: url({% static '/img/core-img/curve.png' %});"></div>
+        <!-- Main Background Image -->
+        {% comment %} <div data-animation="fadeInUpBig" data-delay="200ms" style="background-image: url(./img/bg-img/19.jpg);"></div> {% endcomment %}
+        <!-- Welcome Text -->
+        {% comment %} <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <div class="welcome-text">
+                <h2 data-animation="bounceInUp" data-delay="400ms">Naznin <br>
+                  Niloy</h2>
+                <h5 data-animation="bounceInUp" data-delay="600ms">Star Model 2019</h5>
+                <a href="#" class="btn" data-animation="bounceInUp" data-delay="800ms">Model details <i class="arrow_right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div> {% endcomment %}
+        <!-- Social Info -->
+        {% comment %} <div class="social-info">
+          <a href="#" data-animation="bounceInDown" data-delay="1000ms"><i class="fa fa-facebook"></i> <span>Facebook</span></a>
+          <a href="#" data-animation="bounceInDown" data-delay="1100ms"><i class="fa fa-twitter"></i> <span>Twitter</span></a>
+          <a href="#" data-animation="bounceInDown" data-delay="1200ms"><i class="fa fa-instagram"></i> <span>Instagram</span></a>
+          <a href="#" data-animation="bounceInDown" data-delay="1300ms"><i class="fa fa-youtube-play"></i> <span>Youtube</span></a>
+        </div> {% endcomment %}
+        <!-- Pager -->
+        {% comment %} <div class="slide-pager">
+          <a href="#">Next: Shaila Ritu</a>
+        </div>
+      </div> {% endcomment %}
+
+      {% comment %} <!-- Single Welcome Slide3 -->
+      <div class="single-welcome-slide">
+        <!-- Background Curve -->
+        <div class="bg-curve" style="background-image: url(./img/core-img/curve.png);"></div>
+        <!-- Main Background Image -->
+       
+        <!-- Welcome Text -->
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <div class="welcome-text">
+                <h2 data-animation="bounceInUp" data-delay="400ms">선한영향력<br>
+                 후원이벤트 </h2>
+                <h5 data-animation="bounceInUp" data-delay="600ms">2020후원이벤트</h5>
+                <a href="http://127.0.0.1:8000/maps/" class="btn" data-animation="bounceInUp" data-delay="800ms">이벤트 보러가기 <i class="arrow_right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Social Info -->
+        <div class="social-info">
+          <a href="#" data-animation="bounceInDown" data-delay="1000ms"><i class="fa fa-facebook"></i> <span>Facebook</span></a>
+          <a href="#" data-animation="bounceInDown" data-delay="1100ms"><i class="fa fa-twitter"></i> <span>Twitter</span></a>
+          <a href="#" data-animation="bounceInDown" data-delay="1200ms"><i class="fa fa-instagram"></i> <span>Instagram</span></a>
+          <a href="#" data-animation="bounceInDown" data-delay="1300ms"><i class="fa fa-youtube-play"></i> <span>Youtube</span></a>
+        </div>
+        <!-- Pager -->
+        <div class="slide-pager">
+          <a href="#">Next: Jesse Edwards</a>
+        </div>
+      </div>
+
+    </div> {% endcomment %}
+  </section>
+  <!-- ***** Welcome Area End ***** -->
+
+  <!-- ***** About Us Area Start ***** -->
+  <section class="mona-about-us-area mb-30 section-padding-80-0">
+    <div class="container">
+      <div class="row">
+
+        {% comment %} <!-- About Us Thumbnail -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="about-us-thumbnail mb-50 wow fadeInUp" data-wow-delay="100ms">
+            <span class="line"></span>
+            <span class="line2"></span>
+          </div>
+        </div> {% endcomment %}
+
+        <!-- About Us Thumbnail -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          {% comment %} <div class="about-us-thumbnail mb-50 wow fadeInUp">
+            <span class="line"></span> {% endcomment %}
+            <div id="map" style="width:500px;height:400px;"></div>
+            {% comment %} <span class="line2"></span> {% endcomment %}
+          </div>
+        </div>
+
+        <!-- About Us Content -->
+        <div class="col-12 col-lg-4">
+          <div class="about-us-content mb-50 wow fadeInUp" data-wow-delay="700ms">
+            <h2>선한 영향력</h2>
+            <p>선한영향력 프로젝트</p>
+            <p>엄규영, 김소연, 박은하</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Single Service Area -->
+    <div class="container">
+      <div class="service-area mt-80">
+        <div class="row">
+
+          <!-- Single Service Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+              <i class="icon_film"></i>
+              <h5>Fashion Shows</h5>
+              <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+            </div>
+          </div>
+
+          <!-- Single Service Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="300ms">
+              <i class="icon_calendar"></i>
+              <h5>Special Events</h5>
+              <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+            </div>
+          </div>
+
+          <!-- Single Service Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="500ms">
+              <i class="icon_camera_alt"></i>
+              <h5>Commercial Photo</h5>
+              <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+            </div>
+          </div>
+
+          <!-- Single Service Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="700ms">
+              <i class="icon_house_alt"></i>
+              <h5>Model School</h5>
+              <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** About Us Area End ***** -->
+  {% comment %} <div class="d-flex"> {% endcomment %}
+    <div class="row justify-content-center">
+        <div class='col-md-6'>{% include 'stores/line_graph.html' %}</div>
+        <div class='col-md-6'>{% include 'stores/column_graph.html' %}</div>
+    </div>
+  {% comment %} </div> {% endcomment %}
+
+
+<script>
+//1.지도 그릴 공간을 찾기 
+
+    var container = document.querySelector('#map');
+
+
+    //2. 지도 옵션 설정
+    var options = { 
+        center: new kakao.maps.LatLng(33.450701, 126.570667), 
+        level: 14, 
+    };
+
+    //3.지도 생성
+    var map = new kakao.maps.Map(container, options); 
+
+
+    //4. 마커 생성: 지도를 클릭한 위치에 표출할 마커입니다
+    var marker = new kakao.maps.Marker({ 
+        // 지도 중심좌표에 마커를 생성합니다 
+        position: map.getCenter() 
+    }); 
+
+    //5. 마커 추가 : 지도에 마커를 표시합니다
+    marker.setMap(map);
+
+    kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+    //(내가 이벤트 걸고 싶은 객체, 어떤 이벤트, 이벤트 발생시 뭐를 실행 시킬지)    
+        
+        // 클릭한 위도, 경도 정보를 가져옵니다 
+        var latlng = mouseEvent.latLng; 
+        //클릭 이벤트에 즈으장
+
+        // 마커 위치를 클릭한 위치로 옮깁니다
+        marker.setPosition(latlng);
+        //마커야 사용자가 만금 클릭한 위치로 이동해
+
+        //var message = '클릭한 위치의 위도는 ' + 
+        
+        //위도
+        latlng.getLat()
+        var latInput = document.querySelector('#id_lat')
+        latInput.value = latlng.getLat()
+        // + ' 이고, ';
+        //message += '경도는 ' + 
+        
+        //경도
+        latlng.getLng()
+        var lngInput = document.querySelector('#id_lng')
+        lngInput.value = latlng.getLng()
+        // + ' 입니다';
+        
+        // 첫번째 클릭 시에만 적용되고, 그 이후에는 적용이 안되는데 ,아래 두줄 지우면 된다링가링가링
+        //var resultDiv = document.getElementById('clickLatlng'); 
+        // resultDiv.innerHTML = message;
+        
+    });
+
+</script>
+
+
+
+{% endblock %}
+
+

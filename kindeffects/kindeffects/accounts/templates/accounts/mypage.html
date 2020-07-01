@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+    
+  <!-- ***** Breadcrumb Area Start ***** -->
+    <div class="breadcumb-area">
+        <div class="container h-100">
+            <div class="row h-100 align-items-end">
+                <div class="col-12">
+                <div class="breadcumb--con">
+                    <h2 class="title">MyPage</h2>
+                    <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">MyPage</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">MyPage</li>
+                    </ol>
+                    </nav>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ***** Contact Area Start ***** -->
+    <section class="mona-contact-area section-padding-80-0">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">        
+                <div class="col-12 col-lg-6 col-xl-6">
+                    <div class="mona-contact-form mb-80">
+
+                        <div class="contact-heading">
+                            <h2>회원정보</h2>
+                        </div>
+
+                        <form action="{% url 'accounts:update' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name_kr">이름 </label>
+                                <input type="text" class="form-control" name="name_kr" value="{{ user.name_kr }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">핸드폰 번호</label>
+                                <input type="text" class="form-control" name="phone" value="{{ user.phone }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="store_regist">사업자 번호</label>
+                                <input type="text" class="form-control" name="store_regist" value="{{ user.store_regist }}">
+                            </div>
+                            <button class="btn mona-btn btn-2 mt-15">Edit</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div class="col-12 col-lg-6 col-xl-6">
+                    <div class="mona-contact-form mb-80">
+                        <div class="contact-heading">
+                            <h2>가게 정보</h2>
+                        </div>
+                        <form action="{% url 'stores:update' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name">상호명</label>
+                                <input type="text" class="form-control" name="name" value="{{ user.store.name }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="num">가게 번호</label>
+                                <input type="text" class="form-control" name="num" value="{{ user.store.num }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="addr">가게 주소</label>
+                                <input type="text" class="form-control" name="addr" value="{{ user.store.addr }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="hour">영업 시간</label>
+                                <label>시작 </label><input type="time" class="form-control" name="open_hour" value="{{ user.store.open_hour|date:"H:i" }}">
+                                <br>
+                                <label>종료 </label><input type="time" class="form-control" name="closed_hour" value="{{ user.store.closed_hour|date:"H:i" }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">제공 서비스</label>
+                                <input type="text" class="form-control" name="service" value="{{ user.store.service }}">
+                            </div>
+                            <button class="btn mona-btn btn-2 mt-15">Edit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="userDelete" data-toggle="modal" data-target="#UserDeleteModal">
+                    <p class="btn mona-btn btn-2 mt-15">계정 탈퇴</p>
+                </div>
+            </div>
+        </div>
+    </section>
+  <!-- ***** Contact Area End ***** -->
+
+{% endblock %}

@@ -18,6 +18,12 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/a43482d4c5.js" crossorigin="anonymous"></script>
+
+    <!-- Kakao Map API -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=12b33cfeae96129823a440f07c7b2d91"></script>
+    
     <style>
         {% block style %}
         {% endblock %}
@@ -29,12 +35,92 @@
             {% include 'nav.html' %}
         {% endblock %}
     </header>
+    <!-- ***** SignIn & SignOut Area Start ***** -->
+      <div class="top-search-area">
+        <!-- SingIn Modal -->
+        <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <!-- Close Button -->
+                <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                <!-- Form -->
+                <form action="{% url 'accounts:login' %}" method="post">
+                  {% csrf_token %}
+                  <input type="text" name="username" class="form-control" placeholder="아이디">
+                  <input type="password" name="password" class="form-control" placeholder="비밀번호">
+                  <button type="submit">SignIn</button>
+                  <a class="btn" href="{% url 'accounts:signup' %}">SignUp</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="top-search-area">
+        <!-- SignOut Modal -->
+        <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <!-- Close Button -->
+                <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                <!-- Form -->
+                <form action="{% url 'accounts:logout' %}" method="post">
+                  {% csrf_token %}
+                  <h4>로그아웃 하시겠습니까?</h4>
+                  <button type="submit">SignOut</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- ***** SignIn & SignOut Area End ***** -->
+    <!-- ***** User Delete Start ***** -->
+      <div class="top-search-area">
+        <!-- SignOut Modal -->
+        <div class="modal fade" id="UserDeleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <!-- Close Button -->
+                <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                <!-- Form -->
+                <form action="{% url 'accounts:delete' %}" method="post">
+                  {% csrf_token %}
+                  <p>정말로 회원을 탈퇴하시겠습니까?</p>
+                  <button type="submit">탈퇴</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- ***** User Delete End ***** -->
     <div class="container">
         {% block content %}
         {% endblock  %}
     </div>
+        {% block footer %}
+            {% include 'footer.html' %}
+        {% endblock %}
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+
+    <!-- ******* All JS ******* -->
+    <!-- jQuery js -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- All js -->
+    <script src="{% static 'js/mona.bundle.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/default-assets/active.js' %}"></script>
+
 </body>
 </html>
