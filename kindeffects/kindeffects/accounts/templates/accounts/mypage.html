@@ -50,7 +50,7 @@
                                 <label for="store_regist">사업자 번호</label>
                                 <input type="text" class="form-control" name="store_regist" value="{{ user.store_regist }}">
                             </div>
-                            <button class="btn mona-btn btn-2 mt-15">Edit</button>
+                            <button class="btn mona-btn btn-2 mt-15 pull-right">Edit</button>
                         </form>
                     </div>
                 </div>
@@ -84,13 +84,21 @@
                                 <label for="service">제공 서비스</label>
                                 <input type="text" class="form-control" name="service" value="{{ user.store.service }}">
                             </div>
-                            <button class="btn mona-btn btn-2 mt-15">Edit</button>
+                            <button class="btn mona-btn btn-2 mt-15 pull-right">Edit</button>
                         </form>
                     </div>
                 </div>
-                <div class="userDelete" data-toggle="modal" data-target="#UserDeleteModal">
-                    <p class="btn mona-btn btn-2 mt-15">계정 탈퇴</p>
+                <div class="userDelete" data-toggle="modal" data-target="#UserDeleteModal" style="width:100% padding-right:15px;">
+                    <p class="btn mona-btn btn-2 mt-15 pull-right">계정 탈퇴</p>
                 </div>
+                {% comment %} <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 userDelete" data-toggle="modal" data-target="#UserDeleteModal">
+                        <p class="btn mona-btn btn-2 mt-15">계정 탈퇴</p>
+                    </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </section>

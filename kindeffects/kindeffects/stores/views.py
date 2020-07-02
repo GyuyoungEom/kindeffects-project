@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
-from .models import Store
+from django.shortcuts import get_object_or_404, redirect, render
+from .models import Store, Visiting
 from .forms import StoreForm
+from maps.forms import MapForm
 from django.contrib.auth.decorators import login_required
 
 import qrcode
@@ -16,15 +17,28 @@ def index(request):
 
 def store_new(request):
     if request.method == 'POST':
-        form = StoreForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('stores:index')
+        sform = StoreForm(request.POST)
+        
+        print(request.POST.items)
+        print(sform.is_valid())
+        
+        if sform.is_valid():
+            store = sform.save()
+            # print(sform.pk)
+            mform = MapForm(request.POST)
+            print(mform.is_valid())
+            print(mform.errors)
+            print(store.pk)
+            if mform.is_valid():
+                map = mform.save(commit=False)
+                map.store = store
+                map.save()
+                return redirect('stores:index')
     else:
-        form = StoreForm()
+        sform = StoreForm()
 
     context = {
-        'form': form,
+        'sform': sform,
     }
     return render(request, 'stores/store_new.html', context)
 

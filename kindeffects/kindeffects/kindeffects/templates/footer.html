@@ -9,13 +9,13 @@
         <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
           <div class="single-footer-widget mb-60">
             <!-- Logo -->
-            <a href="#" class="d-block mb-4"><img src="./img/core-img/logo.png" alt=""></a>
-            <p>Integer vehicula mauris libero, at molestie eros imperdiet sit amet. Suspendisse mattis ante sit amet ante.</p>
+            {% comment %} <a href="#" class="d-block mb-4"><img src="./img/core-img/logo.png" alt=""></a> {% endcomment %}
+            <p>함께 만드는 작은 나눔의 나비효과<br>높아져 가는 사랑의 온도 <br>쌓여 가는 아이들의 행복</p>
             <div class="copywrite-text">
               <p>&copy; 
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="http://127.0.0.1:8000/maps/" target="_blank">선과함께</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             </div>
           </div>
@@ -30,14 +30,8 @@
             <!-- Catagories Nav -->
             <nav>
               <ul class="our-link">
-                <li><a href="#">New Faces</a></li>
-                <li><a href="#">Model Of the Week</a></li>
-                <li><a href="#">Classic Women</a></li>
-                <li><a href="#">Privacy Terms</a></li>
-                <li><a href="#">Classic Men</a></li>
-                <li><a href="#">Conditions</a></li>
-                <li><a href="#">Hair & Styles</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'maps:index' %}">Map</a></li>
+                <li><a href="{% url 'stores:index' %}">Stores</a></li>
               </ul>
             </nav>
           </div>
@@ -50,16 +44,16 @@
             <h4 class="widget-title">Contact</h4>
             <!-- Footer Content -->
             <div class="footer-content mb-30">
-              <h4>+01-3-8888-6868</h4>
-              <h6>40 Baria Sreet 133/2 NewYork City</h6>
+              <h4>1588-3357</h4>
+              <h6>서울특별시 강남구 역삼동 테헤란로 212</h6>
+              <h6>상호: 주식회사 선과함께</h6>
+              <h6>대표자: 엄규영 김소연 박은하</h6>
+              
             </div>
             <!-- Social Info -->
             <div class="footer-social-info">
-              <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-              <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
+              <a href="https://www.instagram.com/zinjja_pasta/" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
+              
             </div>
           </div>
         </div>

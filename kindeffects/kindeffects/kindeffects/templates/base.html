@@ -22,11 +22,15 @@
     <script src="https://kit.fontawesome.com/a43482d4c5.js" crossorigin="anonymous"></script>
 
     <!-- Kakao Map API -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=12b33cfeae96129823a440f07c7b2d91"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=12b33cfeae96129823a440f07c7b2d91&libraries=services,clusterer"></script>
     
     <style>
-        {% block style %}
-        {% endblock %}
+      .chartdiv {
+        width: 100%;
+        height: 500px;
+      }
+      {% block style %}
+      {% endblock %}
     </style>
 </head>
 <body>
@@ -35,6 +39,7 @@
             {% include 'nav.html' %}
         {% endblock %}
     </header>
+    
     <!-- ***** SignIn & SignOut Area Start ***** -->
       <div class="top-search-area">
         <!-- SingIn Modal -->
@@ -98,6 +103,8 @@
         </div>
       </div>
     <!-- ***** User Delete End ***** -->
+    <div style="height: 100px;"></div>
+
     <div class="container">
         {% block content %}
         {% endblock  %}
