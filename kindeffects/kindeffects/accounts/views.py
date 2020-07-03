@@ -42,7 +42,7 @@ def login(request):
             user = form.get_user()
             auth_login(request, user)
             return redirect('maps:index')
-
+        
     else:
         form = AuthenticationForm()
     context = {

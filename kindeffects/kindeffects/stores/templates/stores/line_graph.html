@@ -17,25 +17,15 @@
       var chart = am4core.create("line_graph", am4charts.XYChart);
 
       // Add data
-      chart.data = [{
-        "date": new Date(2018, 3, 20),
-        "value": 90
-      }, {
-        "date": new Date(2018, 3, 21),
-        "value": 102
-      }, {
-        "date": new Date(2018, 3, 22),
-        "value": 65
-      }, {
-        "date": new Date(2018, 3, 23),
-        "value": 62
-      }, {
-        "date": new Date(2018, 3, 24),
-        "value": 55
-      }, {
-        "date": new Date(2018, 3, 25),
-        "value": 81
-      }];
+      chart.data = [
+      {% for key, value in visitings_date_cnt.items %}
+      {
+        "date": new Date({{ key.year }}, {{ key.month|add:"-1" }}, {{ key.day }}),
+        "value": {{ value }}
+      },
+      {% endfor %}
+      ]
+
 
       // Create axes
       var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -54,7 +44,7 @@
       var bullet = lineSeries.bullets.push(new am4charts.Bullet());
       var image = bullet.createChild(am4core.Image);
       // image.href = "https://www.amcharts.com/lib/images/star.svg";
-      image.href = "{% static 'img/core-img/salad.svg' %}"
+      image.href = "{% static 'img/core-img/healthy-food.svg' %}"
       image.width = 30;
       image.height = 30;
       image.horizontalCenter = "middle";

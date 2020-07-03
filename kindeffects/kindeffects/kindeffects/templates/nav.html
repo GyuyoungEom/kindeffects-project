@@ -9,7 +9,7 @@
           <div class="bg-curve" style="background-image: url({% static '/img/core-img/curve.png' %});"></div>
 
           <!-- Logo -->
-          <a class="nav-brand" href="{% url 'maps:index' %}"><img src="{% static '/img/core-img/logo.png' %}"  width="250px"></a>
+          <a class="nav-brand" href="{% url 'maps:index' %}"><img src="{% static '/img/core-img/favicon5.png' %}" width="50px"><img src="{% static '/img/core-img/logo.png' %}"  width="250px"></a>
 
           <!-- Navbar Toggler -->
           <div class="classy-navbar-toggler">
@@ -34,7 +34,7 @@
                   <li><a href="#">Mypage</a>
                     <ul class="dropdown">
                       <li><a href="{% url 'accounts:update' %}">- MyPage</a></li>
-                      <li><a href="#">- QR생성</a></li>
+                      <li><a href="{% url 'stores:mypage' user.store.pk %}">- QR생성</a></li>
                     </ul> 
                   </li>
                 {% endif %}

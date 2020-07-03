@@ -1,0 +1,267 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+  #chartdiv {
+    width: 100%;
+    height: 800px;
+  }
+{% endblock %}
+
+{% block content %}
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/maps.js"></script>
+<script src="https://www.amcharts.com/lib/4/geodata/southKoreaHigh.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+<!-- Chart code -->
+<script>
+//console.log("{{ maps.0.lat }}");
+
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_kelly);
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create map instance  , 맴객체 생성
+var chart = am4core.create("chartdiv", am4maps.MapChart);
+chart.maxZoomLevel = 64;
+
+// Set map definition , 미국 맵 셋업
+chart.geodata = am4geodata_southKoreaHigh;
+
+// Set projection , 어떤 식으로 맵 보여줄지 
+chart.projection = new am4maps.projections.Mercator();
+
+// Add button , 줌버튼 생성
+var zoomOut = chart.tooltipContainer.createChild(am4core.ZoomOutButton);
+zoomOut.align = "right";
+zoomOut.valign = "top";
+zoomOut.margin(20, 20, 20, 20);
+zoomOut.events.on("hit", function() { //드릴 다운과 줌아웃 
+  if (currentSeries) {  //줌인 된 상태에서는 전체지도 보여줄 필요 없음 
+    currentSeries.hide(); //상세 페이지  상세 에서는 드릴 다운 숨기기  
+  }
+  chart.goHome();
+  zoomOut.hide(); // 줌아웃 된 상태 , 원본 크기 보여주면 됨    
+  currentSeries = regionalSeries.KR.series; //? 원본지도
+  currentSeries.show(); //원본 지도 보여줌
+});
+zoomOut.hide(); 
+
+
+// Create map polygon series , 폴리건 시리즈 (지역별 색칠?) 생성
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+polygonSeries.useGeodata = true;
+polygonSeries.calculateVisualCenter = true;
+
+// Configure series ,폴리건 구성 , 폴리건 구역이 어떤것들로 구성될지
+var polygonTemplate = polygonSeries.mapPolygons.template;
+polygonTemplate.tooltipText = "{name}"; //geodata 네임 속성
+polygonTemplate.fill = chart.colors.getIndex(0);
+/////////////////////////////////////////////////////////////////////////////
+
+
+// Load data when map polygons are ready , 데이터 읽어올때 폴리건 준비랑
+ chart.events.on("ready", loadStores);
+//chart.events.on("ready", {{ maps }});
+
+// Loads store data, 데이터 로드
+function loadStores() {
+  var loader = new am4core.DataSource();
+  loader.url = "/maps/json/";
+  loader.events.on("parseended", function(ev) {
+    setupStores(ev.target.data); //불어온 데이터에 이벤트 발생시 가게 정보 구성
+  });
+  loader.load();
+}
+
+// Creates a series, 맵 이미지 시리즈 생성 
+function createSeries(heatfield) {
+  console.log("85행");
+  var series = chart.series.push(new am4maps.MapImageSeries()); //맵 이미지 시리즈 사용
+  series.dataFields.value = heatfield;  //그 시리즈는 heatfield로 할것 
+
+  var template = series.mapImages.template; //맴 이미지 구역 
+  template.verticalCenter = "middle";
+  template.horizontalCenter = "middle";
+  template.propertyFields.latitude = "lat";
+  template.propertyFields.longitude = "long";
+  template.tooltipText = "{name}:\n[bold]{stores} stores[/]";  //name , stores 설정 어디서 하는 지 확인 
+  console.log("95행"+ template.tooltipText);
+  var circle = template.createChild(am4core.Circle); //클러스터 동그라미
+  circle.radius = 10;
+  circle.fillOpacity = 0.7;
+  circle.verticalCenter = "middle";
+  circle.horizontalCenter = "middle";
+  circle.nonScaling = true;
+  console.log("102행");
+
+  var label = template.createChild(am4core.Label); //가게 몇개인지 라벨
+  label.text = "{stores}";
+  label.fill = am4core.color("#fff");
+  label.verticalCenter = "middle";
+  label.horizontalCenter = "middle";
+  label.nonScaling = true;
+  console.log("110행");
+
+  var heat = series.heatRules.push({ // 클러스터 동그라미에 heat룰 적용
+    target: circle,
+    property: "radius",
+    min: 10,
+    max: 30
+  });
+  // Set up drill-down , 드릴다운 셋업(hit)
+  console.log("119행");
+  series.mapImages.template.events.on("hit", function(ev) {
+    console.log("121행");
+    
+    // Determine what we've clicked on  무엇을 클릭 한 상태인지 설정 
+    var data = ev.target.dataItem.dataContext; //data를 클릭했을때 , 드릴다운할 로드된 정보 
+  
+    
+    // No id? Individual store - nothing to drill down to further , 한개의 가게까지 가면 드릴다운 노노
+    if (!data.target) {
+      return;
+    }
+
+    // Create actual series if it hasn't been yet created, 여지껏 생서된 시리즈 없으면,  실제 시리즈 생성
+    if (!regionalSeries[data.target].series) { //데이터에 대한 지역 지리스 엇으면
+      regionalSeries[data.target].series = createSeries("count"); //카운트라는  시리즈 생성
+      regionalSeries[data.target].series.data = data.markerData; // 그 시리즈에 마커
+    }
+
+    // Hide current series , 전체 영역 지도 숨기기?
+    if (currentSeries) {
+      currentSeries.hide();
+    }
+
+    // Control zoom
+    if (data.type == "state") { //주를 클릭하면 
+      var statePolygon = polygonSeries.getPolygonById("KR-" + data.state); 
+      chart.zoomToMapObject(statePolygon);  //그 주를 폴리건 해서 줌
+    }
+    else if (data.type == "city") { //도시를 클릭하면
+      chart.zoomToGeoPoint({    //위도 경도를 줌 
+        latitude: data.lat,
+        longitude: data.long
+      }, 64, true);
+    }
+    zoomOut.show();
+
+    // Show new targert series  , 새로운 지역 타켓 보여주기
+    currentSeries = regionalSeries[data.target].series; // 타겟으로 할 
+    currentSeries.show();
+  });
+
+  return series;
+}
+
+var regionalSeries = {}; //전지역이니까 배열인가?
+var currentSeries; //타켓으로 할 지역 
+
+function setupStores(data) { //가게 정보 구성 
+
+  // Init country-level series
+  regionalSeries.KR = { // 지역 설정
+    markerData: [],
+    series: createSeries("stores")   //Stores 시리즈 생성 
+  };
+
+  // Set current series
+  currentSeries = regionalSeries.KR.series;  //현재 지역 설정 
+  console.log(currentSeries);
+  // Process data  //data 정보 가져오기 
+  am4core.array.each(data.fields, function(store) {
+    console.log("여기로 들어오는가");
+    // Get store data ,가게 데이타  전부
+    var store = { 
+      state: store.code,
+      long: am4core.type.toNumber(store.lon),
+      lat: am4core.type.toNumber(store.lat),
+      //location: store.co_loc_n,
+      city: store.dong,
+      //count: am4core.type.toNumber(store.count)
+    }; 
+    console.log(store);
+    //console.log(store.state);
+    //console.log(store.city);
+   //console.log(store.location);
+
+    // Process state-level data 
+    if (regionalSeries[store.state] == undefined) { //가게 주정보 정의 안되어 있으면 
+      var statePolygon = polygonSeries.getPolygonById("KR-" + store.state);  //가게 주정보 받아와서 
+      console.log("109행"+statePolygon);
+      if (statePolygon) {
+
+        // Add state data  //주 data 집어 넢기 
+        regionalSeries[store.state] = {
+          target: store.state,
+          type: "state",
+          name: statePolygon.dataItem.dataContext.name,
+          //count: store.count,
+          stores: 1,
+          lat: statePolygon.visualLatitude,
+          long: statePolygon.visualLongitude,
+          state: store.state,
+          markerData: []
+        };
+        regionalSeries.KR.markerData.push(regionalSeries[store.state]);
+
+      }
+      else {
+        // State not found
+        return;
+      }
+    }//주정보 정의되어 있으면 
+    else {
+      regionalSeries[store.state].stores++; 
+      //regionalSeries[store.state].count += store.count;
+    }
+
+    // Process city-level data
+    if (regionalSeries[store.city] == undefined) {
+      regionalSeries[store.city] = {
+        target: store.city,
+        type: "city",
+        name: store.city,
+        //count: store.count,
+        stores: 1,
+        lat: store.lat,
+        long: store.long,
+        state: store.state,
+        markerData: []
+      };
+      
+      regionalSeries[store.state].markerData.push(regionalSeries[store.city]);
+    }
+    else {
+      regionalSeries[store.city].stores++;
+      //regionalSeries[store.city].count += store.count;
+    }
+
+    // Process individual store 
+    regionalSeries[store.city].markerData.push({
+      name: store.location,
+      //count: store.count,
+      stores: 1,
+      lat: store.lat,
+      long: store.long,
+      state: store.state
+    });
+
+  });
+
+  regionalSeries.KR.series.data = regionalSeries.KR.markerData;
+}
+
+}); // end am4core.ready()
+</script>
+
+<!-- HTML -->
+<div id="chartdiv"></div>
+{% endblock %}

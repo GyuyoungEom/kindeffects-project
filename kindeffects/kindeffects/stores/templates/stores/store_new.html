@@ -4,11 +4,16 @@
     <form action="{% url 'stores:store_new' %}" method="POST">
         {% csrf_token %}
         {{ sform.as_p }}
-        <label for="lat">위도</label>
+        {{ mform.as_p }}
+        {% comment %} <label for="lat">위도</label>
         <input type="text" name="lat" id="lat">
         <label for="lon">경도</label>
         <input type="text" name="lon" id="lon">
+        <label for="dong">동</label>
         <input type="text" name="dong">
+        <label for="code">시</label>
+        <input type="text" name="code.si"> {% endcomment %}
+
         <button onclick="change(addr); return false;">변환</button>
         <button>save</button>
     </form>
@@ -46,8 +51,8 @@
                     var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
                     console.log(result[0].y);
                     console.log(result[0].x);
-                    document.getElementById("lat").value = result[0].y;
-                    document.getElementById("lon").value = result[0].x;
+                    document.getElementById("id_lat").value = result[0].y;
+                    document.getElementById("id_lon").value = result[0].x;
                 }
                  
             //    $.ajax({

@@ -12,6 +12,5 @@ urlpatterns = [
     path('visiting/<int:store_pk>', views.visiting, name='visiting'),
     # 업체의 MyPage
     path('<int:store_pk>/mypage', views.mypage, name='mypage'),
-    # QR 코드 생성
-    path('qr/<int:store_pk>', views.qr, name='qr'),
+    
 ]

@@ -2,6 +2,7 @@
 
 {% block style %}
     /* 가로막대 차트 */
+    /*
     .chart div {
       font: 10px sans-serif;
       background-color: steelblue;
@@ -10,12 +11,9 @@
       margin: 1px;
       color: white;
     }
+    */
 
-    /* AMCHART */
-    .chartdiv {
-    width: 100%;
-    height: 500px;
-    }
+   
 
     
 {% endblock  %}
@@ -33,18 +31,19 @@
            <td>closed_hour</td> 
            <td>service</td> 
            <td>방문횟수</td>            
-           <td>QR생성</td>            
+                       
         </thead>
         {% for store in stores %}
             <tr>
-                <td>{{ store.name }}</td>
-                <td>{{ store.num }}</td>
-                <td>{{ store.addr }}</td>
-                <td>{{ store.open_hour }}</td>
-                <td>{{ store.closed_hour }}</td>
-                <td>{{ store.service }}</td>
-                <td>{{ store.visiting_set.count }}</td>
-                <td> <a href="{% url 'stores:qr' store.pk %}" class="btn btn-primary">qr생성</a></td>
+                {% if store.pk != 1 %}
+                    <td><a href="{% url 'stores:detail' store.pk %}">{{ store.name }}</a></td>
+                    <td>{{ store.num }}</td>
+                    <td>{{ store.addr }}</td>
+                    <td>{{ store.open_hour }}</td>
+                    <td>{{ store.closed_hour }}</td>
+                    <td>{{ store.service }}</td>
+                    <td>{{ store.visiting_set.count }}</td>
+                {% endif %}
             </tr>
         {% endfor %}
     </table>

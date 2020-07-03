@@ -1,11 +1,16 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Store, Visiting
+from maps.models import Map
 from .forms import StoreForm
 from maps.forms import MapForm
 from django.contrib.auth.decorators import login_required
 
 import qrcode
 import qrcode.image.svg
+
+# pip install django-qr-code
+
+
 # Create your views here.
 def index(request):
     stores = Store.objects.all()
@@ -36,9 +41,10 @@ def store_new(request):
                 return redirect('stores:index')
     else:
         sform = StoreForm()
-
+        mform = MapForm()
     context = {
         'sform': sform,
+        'mform': mform,
     }
     return render(request, 'stores/store_new.html', context)
 
@@ -57,8 +63,10 @@ def update(request):
 
 def detail(request, store_pk):
     store = get_object_or_404(Store, pk=store_pk)
+    map = get_object_or_404(Map, store=store)
     context = {
         'store': store,
+        'map': map,
     }
     return render(request, 'stores/store_detail.html', context)
 
@@ -70,39 +78,35 @@ def visiting(request, store_pk):
     visiting.save()
     return redirect('stores:detail', store_pk)
 
-# 로그인 조건을 추가해야 함.
+# 로그인 조건이 추가되었음
+@login_required
 def mypage(request, store_pk):
     store = get_object_or_404(Store, pk=store_pk)
-    context = {
-        'store': store,
-    }
-    return render(request, 'stores/store_mypage.html', context)
 
-# 수퍼유저 로그인 조건을 추가해야 함.
-def qr(request, store_pk):
-    domain = "http://www.dreamtree.site"
-    store_url = f"{domain}/stores/qr/{store_pk}/" 
-
-        # svg 로 저장
-    method = 'basic'
-    if method == 'basic':
-        # Simple factory, just a set of rects.
-        factory = qrcode.image.svg.SvgImage
-    elif method == 'fragment':
-        # Fragment factory (also just a set of rects)
-        factory = qrcode.image.svg.SvgFragmentImage
-    else:
-        # Combined path factory, fixes white space that may occur when zooming
-        factory = qrcode.image.svg.SvgPathImage
-
-    svg = qrcode.make(store_url, image_factory=factory)
-    print(svg)
-
-    svg.save(f"qr_{store_pk}.svg")
-
-    # qr = Qr.objects.create()
-    # qr.svg = svg
+    # 수퍼유저로 로그인 했을 때 또는
+    # 로그인한 사용자의 업체일 때만 --- 접근가능
+    if request.user.is_superuser or request.user.store == store:
+        domain = "http://www.dreamtree.site"
+        store_url = f"{domain}/stores/visiting/{store_pk}/"
+        visitings = Visiting.objects.filter(store_id=store_pk)
+        visiting_dates = [visiting.visiting_time.date() for visiting in visitings]
+        visiting_dates = set(visiting_dates)
+        visiting_dates = sorted(visiting_dates)
+        
+        # 방문횟수 DB를 dictionary로 만들어 context로 전달
+        visitings_date_cnt ={}
+        for date in visiting_dates:
+            visiting_list = [visiting for visiting in visitings if visiting.visiting_time.date() == date]
+            cnt = len(visiting_list)
+            visitings_date_cnt[date] = cnt            
     
-    # QR 코드 저장하는 것 보다, 필요시점에 렌더링하는 것으로 변경을 추천
-    
-    return redirect('stores:index')
+        context = {
+            'store': store,
+            'store_url': store_url,
+            # 'total_visiting_date_cnt': total_visiting_date_cnt,
+            'visitings_date_cnt': visitings_date_cnt,
+        }
+        return render(request, 'stores/store_mypage.html', context)
+
+    # 로그인을 했으나, 다른 업체일 때 -- 본인 업체 Mypage로 이동
+    return redirect('maps:index')

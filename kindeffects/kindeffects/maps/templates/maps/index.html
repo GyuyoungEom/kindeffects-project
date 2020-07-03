@@ -13,13 +13,13 @@
     <section class="welcome-area">
         <!-- Welcome Slides -->
         <div class="container">
-            <div id="map" style="width:100%; height:550px;" ></div>
+            <div id="map" style="width:100%; height:600px;" ></div>
         </div> 
     </section>
   <!-- ***** Welcome Area End ***** -->
 
   <!-- ***** About Us Area Start ***** -->
-  <section class="mona-about-us-area mb-30 section-padding-80-0">
+    <section class="mona-about-us-area mb-30 section-padding-80-0">
         {% comment %} <div class="container">
             <div class="row">
                 <!-- About Us Content -->
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div> {% endcomment %}
-        </div>
+        {% comment %} </div> {% endcomment %}
 
         <!-- Single Service Area -->
         <div class="container">
@@ -40,18 +40,18 @@
                     <!-- Single Service Area -->
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="100ms">
-                            <i class="icon_film"></i>
-                            <h5>Fashion Shows</h5>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                            <img src="{% static 'img/core-img/favicon4.png' %}" width="70px">
+                            <h5>선과 함께 스토리</h5>
+                            <p>적극적인 행동을 통해 함께 실제적인 변화를 만들어 가다</p>
                         </div>
                     </div>
 
                     <!-- Single Service Area -->
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="300ms">
-                            <i class="icon_calendar"></i>
-                            <h5>Special Events</h5>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                            <img src="{% static 'img/core-img/teamwork.png' %}" width="70px">
+                            <h5>함께가는 파트너들</h5>
+                            <p>선한 영향력 프로젝트를 같이 만들어 가는 업체들</p>
                         </div>
                     </div>
 
@@ -59,7 +59,7 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="500ms">
                             <i class="icon_camera_alt"></i>
-                            <h5>Commercial Photo</h5>
+                            <h5></h5>
                             <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
                         </div>
                     </div>
@@ -68,8 +68,8 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="700ms">
                             <i class="icon_house_alt"></i>
-                            <h5>Model School</h5>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                            <h5>후원 리포트</h5>
+                            <p>가장 필요한 곳에 의미 있게 쓰여질 수 있도록</p>
                         </div>
                     </div>
                 </div>
@@ -81,66 +81,64 @@
                 <div class='col-md-4'>{% include 'stores/column_graph.html' %}</div>
             </div>
         </div>
-  </section>
+    </section>
 
-<script>
-//1.지도 그릴 공간을 찾기 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표시할 div
+                center : new kakao.maps.LatLng(36.5683, 126.9358), // 지도의 중심좌표
+                level : 13, // 지도의 확대 레벨
+            });
+        var clusterer = new kakao.maps.MarkerClusterer({
+                map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+                averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+                minLevel: 10 // 클러스터 할 최소 지도 레벨 
+            });
 
-    var container = document.querySelector('#map');
+        $.get("/maps/json", function(data) {
+                // 데이터에서 좌표 값을 가지고 마커를 표시합니다
+                // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
+                
+                var markers = $(data).map(function(i, fields) {
+                        var marker =  new kakao.maps.Marker({
+                            position : new kakao.maps.LatLng(fields.fields.lat, fields.fields.lon),
+                            clickable: true
+                        });
+                        console.log(marker)
+                        var infowindow = new kakao.maps.InfoWindow({
+                            content: "hi" // 인포윈도우에 표시할 내용
+                        });
+                        console.log(infowindow)
 
+                        // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+                        // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+                        // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+                        // 클러스터러에 마커들을 추가합니다
+                        kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+                        kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+                        return marker
+                    });
+                clusterer.addMarkers(markers);
+                console.log(markers)
+                
+                
 
-    //2. 지도 옵션 설정
-    var options = { 
-        center: new kakao.maps.LatLng(33.450701, 126.570667), 
-        level: 14, 
-    };
-
-    //3.지도 생성
-    var map = new kakao.maps.Map(container, options); 
-
-
-    //4. 마커 생성: 지도를 클릭한 위치에 표출할 마커입니다
-    var marker = new kakao.maps.Marker({ 
-        // 지도 중심좌표에 마커를 생성합니다 
-        position: map.getCenter() 
-    }); 
-
-    //5. 마커 추가 : 지도에 마커를 표시합니다
-    marker.setMap(map);
-
-    kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-    //(내가 이벤트 걸고 싶은 객체, 어떤 이벤트, 이벤트 발생시 뭐를 실행 시킬지)    
+            });;
         
-        // 클릭한 위도, 경도 정보를 가져옵니다 
-        var latlng = mouseEvent.latLng; 
-        //클릭 이벤트에 즈으장
+        // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+        function makeOverListener(map, marker, infowindow) {
+            return function() {
+                infowindow.open(map, marker);
+            };
+        }
 
-        // 마커 위치를 클릭한 위치로 옮깁니다
-        marker.setPosition(latlng);
-        //마커야 사용자가 만금 클릭한 위치로 이동해
-
-        //var message = '클릭한 위치의 위도는 ' + 
-        
-        //위도
-        latlng.getLat()
-        var latInput = document.querySelector('#id_lat')
-        latInput.value = latlng.getLat()
-        // + ' 이고, ';
-        //message += '경도는 ' + 
-        
-        //경도
-        latlng.getLng()
-        var lngInput = document.querySelector('#id_lng')
-        lngInput.value = latlng.getLng()
-        // + ' 입니다';
-        
-        // 첫번째 클릭 시에만 적용되고, 그 이후에는 적용이 안되는데 ,아래 두줄 지우면 된다링가링가링
-        //var resultDiv = document.getElementById('clickLatlng'); 
-        // resultDiv.innerHTML = message;
-        
-    });
-
-</script>
+        // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+        function makeOutListener(infowindow) {
+            return function() {
+                infowindow.close();
+            };
+        }        
+  </script>
 
 
 

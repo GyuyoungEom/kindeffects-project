@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'accounts',
     'stores',
     'bootstrap4',
+    'qr_code',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',

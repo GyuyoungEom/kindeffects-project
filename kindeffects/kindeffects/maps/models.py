@@ -6,7 +6,8 @@ from stores.models import Store
 class Code(models.Model):
     si = models.CharField(max_length=200)
     code = models.IntegerField()
-
+    def __str__(self):
+        return self.si
 
 class Map(models.Model):
     lat = models.FloatField()

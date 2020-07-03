@@ -13,8 +13,8 @@
             <h2 class="title">{{ store.name }}</h2>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                <li class="breadcrumb-item"><a href="#">업소 세부정보</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'maps:index' %}"><i class="fa fa-home"></i> Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'stores:index' %}">업소 세부정보</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ store.name }}</li>
               </ol>
             </nav>
@@ -33,8 +33,7 @@
         <!-- Google Maps -->
         <div class="col-12 col-lg-6 col-xl-6">
           <div class="google-maps mb-80">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11956.9355465873!2d24.0768412544878!3d56.9550599906977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfb0e5073ded%3A0x400cfcd68f2fe30!2z4Kaw4Ka_4KaX4Ka-LCDgprLgp43gpq_gpr7gpp_gp43gpq3gpr_gpoY!5e0!3m2!1sbn!2sbd!4v1543911160102"
-              allowfullscreen></iframe>
+              <div id="map" style="width:100%;height:100%;"></div>
           </div>
         </div>
 
@@ -71,5 +70,29 @@
     </div>
   </section>
   <!-- ***** 업체정보 끝 ***** -->
+  
 
+  <script>
+    var lat = {{ map.lat }};
+    var lon = {{ map.lon }};
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+            center: new kakao.maps.LatLng(lat, lon), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
+
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+    console.log(lat +", "+ lon);
+    // 마커가 표시될 위치입니다 
+    var markerPosition  = new kakao.maps.LatLng(lat, lon); 
+
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+
+  </script>
 {% endblock  %}

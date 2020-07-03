@@ -1,6 +1,7 @@
 {% extends 'base.html' %} 
 
 {% load static %}
+{% load qr_code %}
 
 {% block content %}
 
@@ -31,17 +32,17 @@
       <div class="row align-items-center justify-content-between">
 
         <!-- QR 다운로드 -->
-        <div class="col-12 col-lg-6 col-xl-6">
-          <div class="google-maps mb-80">
-            <img src="{% static 'img/qr_3.svg' %}">
-          </div>
+        <div class="col-12 col-lg-6 col-xl-6 mb-80">
+          
+            {% qr_from_text store_url size="l" %}
+          
         </div>
 
         <!-- 업체정보 -->
         <div class="col-12 col-lg-6 col-xl-5">
             <!-- Single Contact Card -->
             <div class="col-12">
-            <div class="single-contact-card mb-80">
+            <div class="single-contact-card mb-40">
                 <h2>주소/전화번호</h2>
                 <h6>{{ store.addr }}<br>
                 {{ store.num }} </h6>
@@ -50,7 +51,7 @@
 
             <!-- Single Contact Card -->
             <div class="col-12">
-            <div class="single-contact-card mb-80">
+            <div class="single-contact-card mb-40">
                 <h2>영업시간</h2>
                 <h6>{{ store.open_hour }} 부터 {{ store.closed_hour }} 까지</h6>
             </div>
@@ -58,7 +59,7 @@
 
             <!-- Single Contact Card -->
             <div class="col-12">
-            <div class="single-contact-card mb-80">
+            <div class="single-contact-card mb-40">
                 <h2>제공서비스</h2>
                 <h6>{{ store.service }}</h6>
             </div>
@@ -70,5 +71,12 @@
     </div>
   </section>
   <!-- ***** 업체정보 끝 ***** -->
+
+  <!-- 선그래프 불러오기 -->
+  <div class="row">
+    {% include 'stores/line_graph.html' %}
+  </div>
+  <!-- 선그래프 끝 -->
+
 
 {% endblock  %}

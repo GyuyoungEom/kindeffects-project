@@ -1,3 +1,4 @@
+{% load static %}
 <!-- Resources -->
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
@@ -22,8 +23,8 @@
 
     chart.data = [{
         "name": "누적 이용자",
-        "steps": 45688,
-        "href": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8MzUPD9iiTMSzYUbwGWlLH0Ruj7p3GiVGpRKm9jwrD4y5a2jrzoV02Q3bVhoFAAoGUOyXb2RDdgZA3igar86o40k1x6RXQsxSc7V-uD7dZaNy_c7zZHVkp2SDvColwWA4VTgSY3dn6EdocJC3ASK6xvB7pP-23BHRSuwgdtPPmwSYBSkCMqb3oK2Xr3GMQ22bBqB0EkTuBrhXmaoPS5ZjMY84l-qRUaaPd6PckS-b4RnWJpPyTmDqjgZ2dSNUqUnv9C3vuE3mKQ8z1fTMIdsMKf1l9wUuSVxfw4BFd69OxJ7OWmbJT4wDqUoJLF1AvwB1cdcLezZP2JLhhpeJENmyPN7yqpE5bi5wmmcVEpIGlRRlmw4ecbdLkwFSX7GfHU5PKutbRNzKXMFcHh8gJ60YACc0t3lRy1-8Px2HGClgdqMYcOfam_c461k&usqp=CAU"
+        "steps": {{ all_cnt }},
+        "href":  "{% static 'img/core-img/favicon4.png' %}"
     }];
 
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -55,7 +56,7 @@
     columnTemplate.column.cornerRadius(60, 60, 10, 10);
     columnTemplate.strokeOpacity = 0;
 
-    series.heatRules.push({ target: columnTemplate, property: "fill", dataField: "valueY", min: am4core.color("rgb(255, 217, 0)"), max: am4core.color("rgb(255, 217, 0)") });
+    series.heatRules.push({ target: columnTemplate, property: "fill", dataField: "valueY", min: am4core.color("#e5dc36"), max: am4core.color("#5faa46") });
     series.mainContainer.mask = undefined;
 
     var cursor = new am4charts.XYCursor();

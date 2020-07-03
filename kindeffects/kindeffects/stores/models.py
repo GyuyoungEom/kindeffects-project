@@ -15,10 +15,6 @@ class Store(models.Model):
 
 
 class Visiting(models.Model):
-    visiting_time = models.TimeField(auto_now=True)
+    visiting_time = models.DateTimeField(auto_now=True)
     store = models.ForeignKey(Store, on_delete=models.CASCADE, blank=True, null=True)
 
-
-class Qr(models.Model):
-    svg = ProcessedImageField(upload_to='', format='SVG', default='default.svg')
-    store = models.OneToOneField(Store, on_delete=models.CASCADE, blank=True, null=True)

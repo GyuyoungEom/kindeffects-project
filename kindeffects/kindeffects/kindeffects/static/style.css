@@ -2005,7 +2005,7 @@ ul {
   .single-footer-widget p {
     color: #666666;
     font-size: 16px;
-    line-height: 1.8; }
+    line-height: 1.0; }
   .single-footer-widget .footer-social-info a {
     display: inline-block;
     color: #ffffff;
@@ -2018,7 +2018,7 @@ ul {
     line-height: 40px; }
     
     .single-footer-widget .footer-social-info a.instagram {
-      background-color: rgba(165, 0, 215, 0.945); }
+      background-color: coral; }
   
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .single-footer-widget .footer-social-info a {

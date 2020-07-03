@@ -5,4 +5,4 @@ class MapForm(forms.ModelForm):
     class Meta:
         model = Map
         # fields = '__all__'
-        fields = ('lat', 'lon', 'dong', )
+        fields = ('lat', 'lon', 'dong', 'code')
