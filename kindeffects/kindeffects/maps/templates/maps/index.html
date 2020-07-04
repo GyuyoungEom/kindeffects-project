@@ -87,15 +87,16 @@
                 // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
                 
                 var markers = $(data).map(function(i, fields) {
+                        var k = fields.fields.store;
+                        console.log(k.name);
+                        //console.log("{{ stores.k }}");
                         var marker =  new kakao.maps.Marker({
                             position : new kakao.maps.LatLng(fields.fields.lat, fields.fields.lon),
                             clickable: true
                         });
-                        console.log(marker)
                         var infowindow = new kakao.maps.InfoWindow({
                             content: "hi" // 인포윈도우에 표시할 내용
                         });
-                        console.log(infowindow)
 
                         // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
                         // 이벤트 리스너로는 클로저를 만들어 등록합니다 
@@ -106,9 +107,6 @@
                         return marker
                     });
                 clusterer.addMarkers(markers);
-                console.log(markers)
-                
-                
 
             });;
         
@@ -124,7 +122,79 @@
             return function() {
                 infowindow.close();
             };
-        }        
+        }
+
+        $.get("/static/maps/do.json", function(data){
+            var latlngs = $(data).map(function(i, features){
+                    var sidos = features.features
+                    // console.log(sido)
+                    sidos.forEach((sido)=>{
+                        var sidoName = sido.properties.CTP_KOR_NM
+                        var sidoCode = sido.properties.CTPRVN_CD
+                        //console.log(sidoName)
+                        var coordinates = sido.geometry.coordinates
+                        coordinates.forEach((coordinate)=>{
+                            var pointArray = []
+                            coordinate.forEach((point)=>{
+                                var path = new kakao.maps.LatLng(point[1], point[0])
+                                pointArray.push(path)
+                            })
+                            var color = ''
+                            var code2 = sidoCode
+                            if(code2=='42'){
+                                color = '#111111'
+                            }else if(code2=='41'){
+                                color = '#222222'
+                            }else if(code2=='48'){
+                                color = '#333333'
+                            }else if(code2=='47'){
+                                color = '#444444'
+                            }else if(code2=='29'){
+                                color = '#111111'
+                            }else if(code2=='27'){
+                                color = '#111111'
+                            }else if(code2=='30'){
+                                color = '#111111'
+                            }else if(code2=='26'){
+                                color = '#111111'
+                            }else if(code2=='11'){
+                                color = '#111111'
+                            }else if(code2=='36'){
+                                color = '#111111'
+                            }else if(code2=='31'){
+                                color = '#111111'
+                            }else if(code2=='28'){
+                                color = '#111111'
+                            }else if(code2=='46'){
+                                color = '#111111'
+                            }else if(code2=='45'){
+                                color = '#111111'
+                            }else if(code2=='50'){
+                                color = '#111111'
+                            }else if(code2=='44'){
+                                color = '#111111'
+                            }else if(code2=='43'){
+                                color = '#111111'
+                            }else{
+                                console.log(code2 + " :탈락");
+                            }
+
+
+                            var polygon = new kakao.maps.Polygon({
+                                path:pointArray, // 그려질 다각형의 좌표 배열입니다
+                                strokeWeight: 3, // 선의 두께입니다
+                                strokeColor: '#39DE2A', // 선의 색깔입니다
+                                strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                                strokeStyle: 'longdash', // 선의 스타일입니다
+                                fillColor: color, // 채우기 색깔입니다
+                                fillOpacity: 0.7 // 채우기 불투명도 입니다
+                            });
+                            polygon.setMap(map);     
+                        })
+                    })
+
+                });
+        })        
   </script>
 
 

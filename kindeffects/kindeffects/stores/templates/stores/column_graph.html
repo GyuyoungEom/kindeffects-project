@@ -1,4 +1,5 @@
 {% load static %}
+
 <!-- Resources -->
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
@@ -24,7 +25,7 @@
     chart.data = [{
         "name": "누적 이용자",
         "steps": {{ all_cnt }},
-        "href":  "{% static 'img/core-img/favicon4.png' %}"
+        "href": "{% static 'img/core-img/logo.png' %}"
     }];
 
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -48,11 +49,11 @@
     series.tooltipText = "{valueY.value}";
     series.tooltip.pointerOrientation = "vertical";
     series.tooltip.dy = - 6;
-    series.columnsContainer.zIndex = 100;
+    series.columnsContainer.zIndex = 10;
 
     var columnTemplate = series.columns.template;
     columnTemplate.width = am4core.percent(50);
-    columnTemplate.maxWidth = 66;
+    columnTemplate.maxWidth = 66; //그래프 기둥 두께
     columnTemplate.column.cornerRadius(60, 60, 10, 10);
     columnTemplate.strokeOpacity = 0;
 
@@ -66,7 +67,7 @@
     cursor.behavior = "none";
 
     var bullet = columnTemplate.createChild(am4charts.CircleBullet);
-    bullet.circle.radius = 30;
+    bullet.circle.radius = 50; // 불렛 동그라미 크기
     bullet.valign = "bottom";
     bullet.align = "center";
     bullet.isMeasured = true;
@@ -78,12 +79,12 @@
     var outlineCircle = bullet.createChild(am4core.Circle);
     outlineCircle.adapter.add("radius", function (radius, target) {
         var circleBullet = target.parent;
-        return circleBullet.circle.pixelRadius + 10;
+        return circleBullet.circle.pixelRadius + 15; //불렛그림 테두리 두께
     })
 
     var image = bullet.createChild(am4core.Image);
-    image.width = 60;
-    image.height = 60;
+    image.width = 130; // 불렛그림 내부 크기
+    image.height = 130;  // 불렛그림 내부 크기
     image.horizontalCenter = "middle";
     image.verticalCenter = "middle";
     image.propertyFields.href = "href";

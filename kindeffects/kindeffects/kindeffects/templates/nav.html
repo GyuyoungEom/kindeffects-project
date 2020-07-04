@@ -33,7 +33,7 @@
                 {% if user.is_authenticated %} 
                   <li><a href="#">Mypage</a>
                     <ul class="dropdown">
-                      <li><a href="{% url 'accounts:update' %}">- MyPage</a></li>
+                      <li><a href="{% url 'stores:update' %}">- MyPage</a></li>
                       <li><a href="{% url 'stores:mypage' user.store.pk %}">- QR생성</a></li>
                     </ul> 
                   </li>

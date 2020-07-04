@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area">
+    <div class="container h-100">
+      <div class="row h-100 align-items-end">
+        <div class="col-12">
+          <div class="breadcumb--con">
+            <h2 class="title">참여현황 리포트</h2>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Casting</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ***** Client Feedback Area Start ***** -->
+  <section class="clients-feedback-area section-padding-0-80 clearfix">
+    <div class="container">
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center">
+            <h2>총 {{ all_cnt }} 번 누적방문</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+          <div class="slider slider-for">
+
+            <!-- Client Feedback Text -->
+            <div class="client-feedback-text text-center">
+              <div class="quote-icon">
+                <i class="icon_quotations" aria-hidden="true"></i>
+              </div>
+              <div class="client-description text-center">
+                <h4>“선한프로젝트 참여 업체에 방문해 주세요. 당신이 비운 한 그릇이 아이들을 후원하는 업체에게 큰 힘이 됩니다.”</h4>
+              </div>
+            </div>           
+          </div>
+        </div>        
+      </div>
+    </div>
+  </section>
+  <!-- ***** Client Feedback Area End ***** -->
+
+  <!-- ***** Casting Form Area Start ***** -->
+  <section class="mona-casting-form-area section-padding-80-0">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+
+        <!-- 그래프 시작-->
+
+            <div class='col-md-8'>{% include 'stores/line_graph.html' %}</div>
+            <div class='col-md-4'>{% include 'stores/column_graph.html' %}</div>
+
+        <!-- 그래프 종료-->
+
+      </div>
+    </div>
+  </section>
+  <!-- ***** Casting Form Area End ***** -->
+
+{% endblock  %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import MapForm
 from .models import Map
-from stores.models import Visiting
+from stores.models import Visiting, Store
 from django.http import HttpResponse
 from django.core.checks import messages
 from django.core import serializers
@@ -59,7 +59,7 @@ def json(request):
 def index(request):
     all_cnt = Visiting.objects.count()
     print("all_cnt::::", all_cnt)
-
+    stores = Store.objects.all()
     # 날짜 데이터 모아오기
     visitings = Visiting.objects.all()
     visiting_dates = [visiting.visiting_time.date() for visiting in visitings]
@@ -75,5 +75,6 @@ def index(request):
     context = {
         'all_cnt': all_cnt,
         'visitings_date_cnt': visitings_date_cnt,
+        'stores': stores,
     }
     return render(request, 'maps/index.html', context)
