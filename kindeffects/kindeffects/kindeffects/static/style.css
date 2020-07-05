@@ -148,7 +148,7 @@ ul {
   top: 0;
   width: 30px;
   height: 30px;
-  background-color: rgb(255, 217, 0);
+  background-color: rgb(172, 211, 115);
   text-align: center;
   right: 0;
   padding-right: 0;
@@ -253,7 +253,7 @@ ul {
   z-index: 99999;
   top: 0;
   left: 0;
-  background-color: rgb(255, 217, 0);
+  background-color: rgb(172, 211, 115);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -369,7 +369,7 @@ ul {
   line-height: 42px;
   right: 0;
   width: 40px;
-  background-color: rgb(255, 217, 0);
+  background-color: rgb(172, 211, 115);
   color: #ffffff;
   text-align: center;
   height: 40px;
@@ -395,7 +395,7 @@ ul {
   text-transform: capitalize;
   color: #ffffff;
   border-radius: 40px;
-  background-color: rgb(255, 217, 0);
+  background-color: rgb(172, 211, 115);
   -webkit-transition-duration: 500ms;
   -o-transition-duration: 500ms;
   transition-duration: 500ms;
@@ -406,12 +406,12 @@ ul {
     color: #ffffff;
     border-color: #000000; }
   .mona-btn.btn-2 {
-    border-color: rgb(255, 217, 0);
-    color: rgb(255, 217, 0);
+    border-color: rgb(172, 211, 115);
+    color: rgb(172, 211, 115);
     background-color: #ffffff; }
     .mona-btn.btn-2:focus, .mona-btn.btn-2:hover {
       color: #ffffff;
-      background-color: rgb(255, 217, 0); }
+      background-color: rgb(172, 211, 115); }
 
 /* :: 7.0 Header CSS */
 .header-area {
@@ -507,7 +507,7 @@ ul {
       position: absolute;
       width: 80%;
       height: 2px;
-      background-color: #f6a4ce;
+      background-color: rgb(172, 211, 115);
       bottom: 0;
       left: 50%;
       -webkit-transform: translateX(-50%);
@@ -529,7 +529,7 @@ ul {
   color: #ffffff; }
 
 .breakpoint-off .classynav ul li .dropdown {
-  background-color: rgb(255, 217, 0); }
+  background-color: rgb(172, 211, 115); }
 
 .classynav ul li .dropdown li a {
   border-bottom: none;
@@ -548,21 +548,21 @@ ul {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .breakpoint-on .classy-navbar .classy-menu {
-    background-color: rgb(255, 217, 0);
+    background-color: rgb(172, 211, 115);
     box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.2); }
 
   .breakpoint-on .classynav > ul > li > a {
-    background-color: rgb(255, 217, 0); }
+    background-color: rgb(172, 211, 115); }
 
   .classycloseIcon .cross-wrap span {
     background-color: #ffffff; } }
 @media only screen and (max-width: 767px) {
   .breakpoint-on .classy-navbar .classy-menu {
-    background-color: rgb(255, 217, 0);
+    background-color: rgb(172, 211, 115);
     box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.2); }
 
   .breakpoint-on .classynav > ul > li > a {
-    background-color: rgb(255, 217, 0); }
+    background-color: rgb(172, 211, 115); }
 
   .classycloseIcon .cross-wrap span {
     background-color: #ffffff; } }
@@ -587,7 +587,7 @@ ul {
         background-color: transparent; }
         .top-search-area .modal-content .modal-body button.close-btn.btn:focus, .top-search-area .modal-content .modal-body button.close-btn.btn:hover {
           box-shadow: none;
-          color: rgb(255, 217, 0); }
+          color: rgb(172, 211, 115); }
 .top-search-area form {
   width: 100%;
   position: relative;
@@ -612,7 +612,7 @@ ul {
     z-index: 10;
     border-radius: 0 6px 6px 0;
     border: none;
-    background-color: rgb(255, 217, 0);
+    background-color: rgb(172, 211, 115);
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
@@ -644,7 +644,7 @@ ul {
     font-size: 30px;
     z-index: 10; }
     .welcome-slides .owl-next:focus, .welcome-slides .owl-next:hover {
-      background-color: rgb(255, 217, 0);
+      background-color: rgb(172, 211, 115);
       color: #ffffff; }
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .welcome-slides .owl-next {
@@ -732,7 +732,7 @@ ul {
         .single-welcome-slide .social-info a span {
           display: none; } }
       .single-welcome-slide .social-info a:focus, .single-welcome-slide .social-info a:hover {
-        color: rgb(255, 217, 0);
+        color: rgb(172, 211, 115);
         box-shadow: none; }
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .single-welcome-slide .social-info a {
@@ -808,7 +808,7 @@ ul {
     font-size: 16px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgb(255, 217, 0);
+    color: rgb(172, 211, 115);
     font-weight: 600; }
     .welcome-text a:focus, .welcome-text a:hover {
       color: #232323; }
@@ -846,7 +846,7 @@ ul {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 217, 0);
+    background-color: rgb(172, 211, 115);
     top: 0;
     left: 0;
     z-index: 10;
@@ -897,7 +897,7 @@ ul {
       display: block;
       font-size: 72px;
       margin-bottom: 20px;
-      color: rgb(255, 217, 0);
+      color: rgb(172, 211, 115);
       -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
       transform: rotate(180deg); }
@@ -937,8 +937,8 @@ ul {
       margin: 5.5px;
       outline: none; }
     .clients-feedback-area .slick-dots li.slick-active button {
-      background-color: rgb(255, 217, 0);
-      border-color: rgb(255, 217, 0); }
+      background-color: rgb(172, 211, 115);
+      border-color: rgb(172, 211, 115); }
   .clients-feedback-area .slick-slide.client-thumbnail {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1083,7 +1083,7 @@ ul {
           -o-transition-duration: 800ms;
           transition-duration: 800ms; }
         .single-model-item .model-thumbnail .share-info .share-icon a:focus, .single-model-item .model-thumbnail .share-info .share-icon a:hover {
-          background-color: rgb(255, 217, 0); }
+          background-color: rgb(172, 211, 115); }
           .single-model-item .model-thumbnail .share-info .share-icon a:focus i, .single-model-item .model-thumbnail .share-info .share-icon a:hover i {
             -webkit-transform: rotate(-180deg);
             -ms-transform: rotate(-180deg);
@@ -1109,7 +1109,7 @@ ul {
           line-height: 50px;
           background-color: #232323; }
           .single-model-item .model-thumbnail .share-info .others-icon a:focus, .single-model-item .model-thumbnail .share-info .others-icon a:hover {
-            background-color: rgb(255, 217, 0); }
+            background-color: rgb(172, 211, 115); }
           .single-model-item .model-thumbnail .share-info .others-icon a:nth-child(2) {
             top: 0;
             left: 20%; }
@@ -1156,7 +1156,7 @@ ul {
     opacity: 1;
     visibility: visible; }
   .single-model-item:focus .model-info h3, .single-model-item:hover .model-info h3 {
-    color: rgb(255, 217, 0); }
+    color: rgb(172, 211, 115); }
 
 .mona-actor-slide,
 .mona-all-model-slide,
@@ -1212,7 +1212,7 @@ ul {
     .mona-singer-slide .owl-next:hover,
     .mona-singer-slide .owl-prev:focus,
     .mona-singer-slide .owl-prev:hover {
-      background-color: rgb(255, 217, 0); }
+      background-color: rgb(172, 211, 115); }
 
 @media only screen and (min-width: 1200px) {
   .mona-model-area.model-page .mona-tab-content .col-xl {
@@ -1236,7 +1236,7 @@ ul {
   .about-us-thumbnail .line {
     width: 100px;
     height: 15px;
-    background-color: rgb(255, 217, 0);
+    background-color: rgb(172, 211, 115);
     position: absolute;
     z-index: 10;
     top: -15px;
@@ -1250,7 +1250,7 @@ ul {
       content: '';
       height: 100px;
       width: 15px;
-      background-color: rgb(255, 217, 0);
+      background-color: rgb(172, 211, 115);
       position: absolute;
       top: 0;
       right: 0;
@@ -1258,7 +1258,7 @@ ul {
   .about-us-thumbnail .line2 {
     width: 100px;
     height: 15px;
-    background-color: rgb(255, 217, 0);
+    background-color: rgb(172, 211, 115);
     position: absolute;
     z-index: 10;
     bottom: -15px;
@@ -1272,7 +1272,7 @@ ul {
       content: '';
       height: 100px;
       width: 15px;
-      background-color: rgb(255, 217, 0);
+      background-color: rgb(172, 211, 115);
       position: absolute;
       bottom: 0;
       left: 0;
@@ -1328,7 +1328,7 @@ ul {
   .service-area i {
     font-size: 42px;
     margin-bottom: 30px;
-    color: rgb(255, 217, 0);
+    color: rgb(172, 211, 115);
     display: block; }
   .service-area h5 {
     -webkit-transition-duration: 500ms;
@@ -1340,7 +1340,7 @@ ul {
     font-size: 16px;
     margin-bottom: 0; }
   .service-area:focus h5, .service-area:hover h5 {
-    color: rgb(255, 217, 0); }
+    color: rgb(172, 211, 115); }
 
 .single-benefits-area {
   position: relative;
@@ -1352,7 +1352,7 @@ ul {
     max-width: 70px;
     width: 70px; }
     .single-benefits-area .benefits-icon i {
-      color: rgb(255, 217, 0);
+      color: rgb(172, 211, 115);
       font-size: 42px; }
   .single-benefits-area .benefits-content h5 {
     font-size: 22px; }
@@ -1373,7 +1373,7 @@ ul {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    background-color: rgb(255, 217, 0);
+    background-color: rgb(172, 211, 115);
     color: #ffffff;
     line-height: 50px; }
     .mona-video-area .video-play-btn:focus, .mona-video-area .video-play-btn:hover {
@@ -1428,7 +1428,7 @@ ul {
       .breadcumb-area .breadcumb--con .breadcrumb .breadcrumb-item > a:hover,
       .breadcumb-area .breadcumb--con .breadcrumb .breadcrumb-item.active:focus,
       .breadcumb-area .breadcumb--con .breadcrumb .breadcrumb-item.active:hover {
-        color: rgb(255, 217, 0); }
+        color: rgb(172, 211, 115); }
     .breadcumb-area .breadcumb--con .breadcrumb .breadcrumb-item.active {
       color: #a6a6a6; }
       .breadcumb-area .breadcumb--con .breadcrumb .breadcrumb-item.active:focus, .breadcumb-area .breadcumb--con .breadcrumb .breadcrumb-item.active:hover {
@@ -1484,7 +1484,7 @@ ul {
       margin-bottom: 0;
       font-weight: 600; }
   .single-blog-post:focus .post-content .post-title, .single-blog-post:hover .post-content .post-title {
-    color: rgb(255, 217, 0); }
+    color: rgb(172, 211, 115); }
   .single-blog-post:focus .post-thumbnail a img, .single-blog-post:hover .post-thumbnail a img {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%); }
@@ -1496,7 +1496,7 @@ ul {
       position: absolute;
       width: 270px;
       height: 100%;
-      background-color: rgb(255, 217, 0);
+      background-color: rgb(172, 211, 115);
       top: 0;
       left: 0;
       right: 0;
@@ -1543,7 +1543,7 @@ ul {
     .blog-details-content .post-content .post-meta a:last-child {
       margin-right: 0; }
     .blog-details-content .post-content .post-meta a:focus, .blog-details-content .post-content .post-meta a:hover {
-      color: rgb(255, 217, 0); }
+      color: rgb(172, 211, 115); }
   .blog-details-content h1,
   .blog-details-content h2,
   .blog-details-content h3,
@@ -1570,12 +1570,12 @@ ul {
     color: #666666;
     font-size: 16px; }
     .mona-pagination .pagination .page-item .page-link:focus, .mona-pagination .pagination .page-item .page-link:hover {
-      background-color: rgb(255, 217, 0);
-      border-color: rgb(255, 217, 0);
+      background-color: rgb(172, 211, 115);
+      border-color: rgb(172, 211, 115);
       color: #ffffff; }
   .mona-pagination .pagination .page-item.active .page-link {
-    background-color: rgb(255, 217, 0);
-    border-color: rgb(255, 217, 0);
+    background-color: rgb(172, 211, 115);
+    border-color: rgb(172, 211, 115);
     color: #ffffff; }
 
 .comment_area {
@@ -1641,8 +1641,8 @@ ul {
       .comment_area .comment-content .comment-meta a.like:focus, .comment_area .comment-content .comment-meta a.like:hover,
       .comment_area .comment-content .comment-meta a.reply:focus,
       .comment_area .comment-content .comment-meta a.reply:hover {
-        border-color: rgb(255, 217, 0);
-        background-color: rgb(255, 217, 0);
+        border-color: rgb(172, 211, 115);
+        background-color: rgb(172, 211, 115);
         color: #ffffff; }
   .comment_area .children {
     margin-left: 50px; }
@@ -1672,7 +1672,7 @@ ul {
         width: 50px; } }
     .mona-blockquote .icon i {
       font-size: 60px;
-      color: rgb(255, 217, 0); }
+      color: rgb(172, 211, 115); }
       @media only screen and (max-width: 767px) {
         .mona-blockquote .icon i {
           font-size: 30px; } }
@@ -1705,7 +1705,7 @@ ul {
     .mona-post-share .social-info- a:last-child {
       margin-right: 0; }
     .mona-post-share .social-info- a:focus, .mona-post-share .social-info- a:hover {
-      color: rgb(255, 217, 0); }
+      color: rgb(172, 211, 115); }
     @media only screen and (max-width: 767px) {
       .mona-post-share .social-info- a {
         font-size: 12px;
@@ -1726,7 +1726,7 @@ ul {
     font-weight: 600;
     margin: 3px; }
     .post-catagories ul li a:focus, .post-catagories ul li a:hover {
-      background-color: rgb(255, 217, 0);
+      background-color: rgb(172, 211, 115);
       color: #ffffff; }
     @media only screen and (max-width: 767px) {
       .post-catagories ul li a {
@@ -1744,7 +1744,7 @@ ul {
 .mona-cta-area {
   position: relative;
   z-index: 1;
-  background-color: rgb(255, 217, 0); }
+  background-color: rgb(172, 211, 115); }
 
 .cta-content {
   position: relative;
@@ -1829,7 +1829,7 @@ ul {
           line-height: 50px;
           background-color: #232323; }
           .single-team-member-area .team-member-thumbnail .share-info .others-icon a:focus, .single-team-member-area .team-member-thumbnail .share-info .others-icon a:hover {
-            background-color: rgb(255, 217, 0); }
+            background-color: rgb(172, 211, 115); }
           .single-team-member-area .team-member-thumbnail .share-info .others-icon a:nth-child(2) {
             top: 0;
             left: 20%; }
@@ -1865,7 +1865,7 @@ ul {
       font-size: 14px;
       text-transform: uppercase; }
   .single-team-member-area:focus .team-member-info h4, .single-team-member-area:hover .team-member-info h4 {
-    color: rgb(255, 217, 0); }
+    color: rgb(172, 211, 115); }
 
 /* :: 17.0 Widget CSS */
 .search-widget-area form {
@@ -1885,11 +1885,11 @@ ul {
     border-radius: 0; }
     .search-widget-area form input:focus {
       box-shadow: none;
-      border: 1px solid rgb(255, 217, 0); }
+      border: 1px solid rgb(172, 211, 115); }
   .search-widget-area form button {
     width: 50px;
     height: 45px;
-    background-color: rgb(255, 217, 0);
+    background-color: rgb(172, 211, 115);
     padding: 0 15px;
     color: #ffffff;
     font-size: 14px;
@@ -1928,7 +1928,7 @@ ul {
     .catagories-list li a i {
       margin-right: 10px; }
     .catagories-list li a:focus, .catagories-list li a:hover {
-      color: rgb(255, 217, 0); }
+      color: rgb(172, 211, 115); }
   .catagories-list li:first-child a {
     padding-top: 0; }
   .catagories-list li:last-child a {
@@ -1958,7 +1958,7 @@ ul {
         .single-news-area .blog-content .post-title {
           font-size: 16px; } }
       .single-news-area .blog-content .post-title:focus, .single-news-area .blog-content .post-title:hover {
-        color: rgb(255, 217, 0); }
+        color: rgb(172, 211, 115); }
     .single-news-area .blog-content .post-date {
       color: #a6a6a6;
       display: block;
@@ -1985,7 +1985,7 @@ ul {
     font-weight: 600;
     margin: 3px; }
     .tags-list li a:focus, .tags-list li a:hover {
-      background-color: rgb(255, 217, 0);
+      background-color: rgb(172, 211, 115);
       color: #ffffff; }
 
 /* :: 18.0 Footer CSS */
@@ -2010,7 +2010,7 @@ ul {
     display: inline-block;
     color: #ffffff;
     margin-right: 5px;
-    background-color: rgb(255, 217, 0);
+    background-color: rgb(172, 211, 115);
     width: 40px;
     height: 40px;
     border-radius: 20px;
@@ -2071,7 +2071,7 @@ ul {
     .copywrite-text p a {
       color: #a6a6a6; }
       .copywrite-text p a:focus, .copywrite-text p a:hover {
-        color: rgb(255, 217, 0); }
+        color: rgb(172, 211, 115); }
 
 /* :: 19.0 Contact Area */
 .mona-contact-area {
@@ -2149,7 +2149,7 @@ ul {
     border-radius: 0; }
     .mona-contact-form .form-control:focus {
       box-shadow: none;
-      border-color: rgb(255, 217, 0); }
+      border-color: rgb(172, 211, 115); }
   .mona-contact-form textarea.form-control {
     height: 110px;
     padding: 20px; }

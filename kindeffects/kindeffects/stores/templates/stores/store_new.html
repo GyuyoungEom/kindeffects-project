@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
-
+{% block style %}
+div{
+    text-align: center;
+}
+{% endblock  %}
 {% block content %}
+<div> 
     <form action="{% url 'stores:store_new' %}" method="POST">
         {% csrf_token %}
         {{ sform.as_p }}
@@ -14,12 +19,14 @@
         <label for="code">시</label>
         <input type="text" name="code.si"> {% endcomment %}
 
-        <button onclick="change(addr); return false;">변환</button>
-        <button>save</button>
+        <button onclick="change(addr); return false;" class= "btn btn-info">좌표로 변환 변환</button>
+        <button class="btn btn-warning">새 업체 등록하기</button>
     </form>
     <form action="">
         
     </form>
+</div>
+<br><br><br>
     <script>
         function getCookie(name) {
           var cookieValue = null;

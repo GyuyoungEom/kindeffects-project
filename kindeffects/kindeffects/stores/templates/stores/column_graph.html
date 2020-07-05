@@ -24,7 +24,7 @@
     chart.data = [{
         "name": "누적 이용자",
         "steps": {{ all_cnt }},
-        "href":  "{% static 'img/core-img/favicon4.png' %}"
+        "href":  "{% static 'img/core-img/favicon1.png' %}"
     }];
 
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -56,7 +56,7 @@
     columnTemplate.column.cornerRadius(60, 60, 10, 10);
     columnTemplate.strokeOpacity = 0;
 
-    series.heatRules.push({ target: columnTemplate, property: "fill", dataField: "valueY", min: am4core.color("#e5dc36"), max: am4core.color("#5faa46") });
+    series.heatRules.push({ target: columnTemplate, property: "fill", dataField: "valueY", min: am4core.color("#ffdb4d"), max: am4core.color("#ffdb4d") });
     series.mainContainer.mask = undefined;
 
     var cursor = new am4charts.XYCursor();

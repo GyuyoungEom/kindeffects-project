@@ -9,7 +9,7 @@
           <div class="bg-curve" style="background-image: url({% static '/img/core-img/curve.png' %});"></div>
 
           <!-- Logo -->
-          <a class="nav-brand" href="{% url 'maps:index' %}"><img src="{% static '/img/core-img/favicon5.png' %}" width="50px"><img src="{% static '/img/core-img/logo.png' %}"  width="250px"></a>
+          <a class="nav-brand" href="{% url 'maps:index' %}"><img src="{% static '/img/core-img/favicon5.png' %}" width="50px"><img src="{% static '/img/core-img/logo2.png' %}"  width="150px"></a>
 
           <!-- Navbar Toggler -->
           <div class="classy-navbar-toggler">
@@ -26,15 +26,28 @@
             <!-- Nav Start -->
             <div class="classynav">
               <ul id="nav">
-                <li class="current-item"><i class="fas fa-sign-in-alt"></i></li>
                 <li class="current-item"><a href="{% url 'maps:index' %}">Home</a></li>
-                {% comment %} <li><a href="{% url 'maps:about' %}">About Us</a></li> {% endcomment %}
+                <li><a href="#">About Us</a>
+                {% comment %} <li><a href="{% url 'maps:about' %}">About Us</a></li>  {% endcomment %}
+                  <ul class="dropdown">
+                    <li><a href="{% url 'informs:index' %}"> About '선과함께'</a></li>
+                    {% comment %} <li><a href="{% url 'maps:about' %}"> About '선과함께'</a></li> {% endcomment %}
+                    <li><a href="#"> 참여 가이드</a>
+                      <ul class="dropdown">
+                        <li><a href="{% url 'informs:user' %}">후원자</a></li>
+                        <li><a href="{% url 'informs:boss' %}">사장님</a></li>
+                      </ul></li>
+                  </ul></li> 
                 <li><a href="{% url 'stores:index' %}">Stores</a></li>
                 {% if user.is_authenticated %} 
-                  <li><a href="#">Mypage</a>
+                  <li><a href="#">MyPage</a>
                     <ul class="dropdown">
-                      <li><a href="{% url 'accounts:update' %}">- MyPage</a></li>
-                      <li><a href="{% url 'stores:mypage' user.store.pk %}">- QR생성</a></li>
+                      {% if user.is_superuser %}
+                        <li><a href="/admin">- MyPage</a></li>
+                      {% else %}
+                        <li><a href="{% url 'stores:update' %}">- MyPage</a></li>
+                        <li><a href="{% url 'stores:mypage' user.store.pk %}">- QR생성</a></li>
+                      {% endif %}
                     </ul> 
                   </li>
                 {% endif %}
@@ -61,5 +74,3 @@
         </nav>
       </div>
     </div>
-    
-

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+div{
+    text-align: center;
+}
+
+h3{
+  font-family: 'Gugi', cursive;
+  font-size: 50px;
+
+}
+
+p{
+  font-family: 'Gugi', cursive;
+  font-size: 15px;
+}
+
+.card-img-top{
+    width: 286px;
+    height: 200px;
+}
+{% endblock  %}
+{% block content %}
+<br><br><br><br><br><br>
+
+<h3>더 많은 사람들과 '선함의 가치'를 나누고 싶어요</h3>
+<br><br>
+<div class="row">
+<div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/core-img/signup.png' %}" class="card-img-top" >
+        <div class="card-body">
+        <p class="card-text">Step1. <b>'선과 함께' </b>에 <br>가입한다.</p>
+        </div>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/core-img/qr.png' %}" class="card-img-top" >
+        <div class="card-body">
+        <p class="card-text">Step2. 마이 페이지에서<br> <b>개별 QR 코드</b>를 프린트 한다.</p>
+        </div>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/core-img/kind3.png' %}" class="card-img-top" >
+        <div class="card-body">
+        <p class="card-text">Step3. 프린트한 QR코드를 <br>가게 <b>잘 보이는 곳</b>에 비치 한다.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/core-img/결식.png' %}" class="card-img-top" >
+        <div class="card-body">
+        <p class="card-text">Step4. 늘어가는 <b> 후원 적립 정도</b> 만큼,<br> 아이들에겐 더 많은 도움의 손길이 ! </p>
+        </div>
+    </div>
+</div> 
+</div> 
+       
+
+
+
+
+
+
+    {% comment %} <div>
+        <h3>더 많은 사람들과 '선함의 가치'를 나누고 싶어요</h3>
+        <p>
+        1. <b>'선과 함께' </b>에 가입한다.
+        <br>
+        2. 마이 페이지에서 개별 가게 마다 부여된 <b>QR 코드</b>를 다운 받아 프린트 한다.
+        <br>
+        3. 프린트한 QR코드를 가게 <b>잘 보이는 곳</b>에 비치 한다.
+        <br>
+        4. 늘어가는 <b> 후원 적립 정도</b> 만큼, 아이들에겐 더 많은 도움의 손길이 !   
+        </p>
+    </div> {% endcomment %}
+<br><br><br><br><br><br>
+{% endblock  %}

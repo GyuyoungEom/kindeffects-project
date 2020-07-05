@@ -24,7 +24,9 @@ SECRET_KEY = '-vvk^r!sesb4u6@6z=#iy8^2q@)u5q8=h*8p=gkk!49=!04&4w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
+# ALLOWED_HOSTS = ['127.0.0.1']
 ALLOWED_HOSTS = []
 
 
@@ -34,8 +36,10 @@ INSTALLED_APPS = [
     'maps',
     'accounts',
     'stores',
+    'informs',
     'bootstrap4',
     'qr_code',
+    'import_export',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',

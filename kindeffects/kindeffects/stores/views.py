@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render
+from django.core.paginator import Paginator
 from .models import Store, Visiting
 from maps.models import Map
 from .forms import StoreForm
@@ -14,6 +15,9 @@ import qrcode.image.svg
 # Create your views here.
 def index(request):
     stores = Store.objects.all()
+    paginator = Paginator(stores,10)
+    page_num = request.GET.get('page')
+    stores = paginator.get_page(page_num)
     context = {
         'stores' : stores,
     }
@@ -110,3 +114,29 @@ def mypage(request, store_pk):
 
     # 로그인을 했으나, 다른 업체일 때 -- 본인 업체 Mypage로 이동
     return redirect('maps:index')
+
+
+
+# 서포트 현황 report 페이지 보기
+def report(request):
+    all_cnt = Visiting.objects.count()
+    print("all_cnt::::", all_cnt)
+
+    # 날짜 데이터 모아오기
+    visitings = Visiting.objects.all()
+    visiting_dates = [visiting.visiting_time.date() for visiting in visitings]
+    visiting_dates = set(visiting_dates)
+    visiting_dates = sorted(visiting_dates)
+
+    visitings_date_cnt ={}
+    for date in visiting_dates:
+        visiting_list = [visiting for visiting in visitings if visiting.visiting_time.date() == date]
+        cnt = len(visiting_list)
+        visitings_date_cnt[date] = cnt
+
+    context = {
+        'all_cnt': all_cnt,
+        'visitings_date_cnt': visitings_date_cnt,
+    }
+
+    return render(request, 'stores/report.html', context)

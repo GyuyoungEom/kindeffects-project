@@ -2,8 +2,32 @@
 
 {% load static %}
 {% load qr_code %}
+{% load bootstrap4 %}
 
 {% block content %}
+<script>
+    function onPrint() {      
+      const chartDiv = document.querySelector('.chartdiv');
+      const footerDiv = document.querySelector('footer');
+      const button = document.querySelector('.btn');
+      //const printContents = document.querySelector('svg').innerHTML;
+      const printDiv = document.createElement('DIV');
+      //printDiv.className = 'print-div';
+      
+      document.body.appendChild(printDiv);
+      // printDiv.img.src = "{% static 'img/core-img/logo.png' %}";
+      chartDiv.style.display = 'none';
+      footerDiv.style.display = 'none';
+      button.style.display = 'none';
+      window.print();
+
+      //chartDiv.style.display = 'block';
+      //footerDiv.sytle.display = 'block';
+      // printDiv.style.display = 'none';
+      //printDiv.innerHTML = '';
+    }
+</script>
+
 
   <!-- ***** Breadcrumb Area Start ***** -->
   <div class="breadcumb-area">
@@ -35,6 +59,11 @@
         <div class="col-12 col-lg-6 col-xl-6 mb-80">
           
             {% qr_from_text store_url size="l" %}
+            {% buttons %}   
+            
+              <button class="btn mona-btn btn-2" onclick="onPrint()">프린트</button>            
+                         
+            {% endbuttons %}
           
         </div>
 
@@ -67,7 +96,6 @@
         </div>
       </div>
       <!--업체정보 끝-->
-
     </div>
   </section>
   <!-- ***** 업체정보 끝 ***** -->

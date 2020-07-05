@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+div{
+    text-align: center;
+}
+
+h3{
+  font-family: 'Gugi', cursive;
+  font-size: 50px;
+  text-align: center;
+
+}
+
+
+p{
+  font-family: 'Gugi', cursive;
+  font-weight: bold;
+  font-size: 15px;
+}
+.card-img-top{
+    width: 286px;
+    height: 200px;
+}
+{% endblock  %}
+{% block content %}
+
+<br><br><br><br><br><br>
+
+<h3>'내'가 함께 만드는 '나,비' 효과</h3>
+<br><br>
+<div class="row">
+<div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/core-img/map.png' %}" class="card-img-top" >
+        <div class="card-body">
+        <p class="card-text"> Step1. 선한영향력 프로젝트 업체를<br> <b>지도</b>에서 찾아 보아요 !</p>
+        </div>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/core-img/qr.png' %}" class="card-img-top" >
+        <div class="card-body">
+        <p class="card-text">Step2. 업체에 비치된 <b>QR 코드</b>를 <br>핸드폰으로 찍어주세요.</p>
+        </div>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/core-img/temp.png' %}" class="card-img-top" >
+        <div class="card-body">
+        <p class="card-text">Step3. 사이트의 <b>후원 온도계</b>가 <br>올라갑니다.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/core-img/kids1.png' %}" class="card-img-top" >
+        <div class="card-body">
+        <p class="card-text">Step4. 당신이 비운 한 그릇이,<br>  <b>아이들을 위한  ‘한 그릇’</b>이 됩니다.</p>
+        </div>
+    </div>
+</div> 
+</div> 
+       
+    
+ 
+    
+<br><br><br><br><br><br>
+{% endblock  %}

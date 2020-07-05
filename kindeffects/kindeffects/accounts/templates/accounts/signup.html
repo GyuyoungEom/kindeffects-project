@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load bootstrap4 %}
-
+{% block style %}
+.top-search-area{
+  text-align: center;
+}
+{% endblock  %}
 {% block content %}
   <!-- ***** Top Search Area Start ***** -->
     <div class="top-search-area">
@@ -50,8 +54,8 @@
     <div class="container">
           <div class="casting-form mona-contact-form mb-80 container">
             <div class="contact-heading">
-              <h3>여기에 뭐가 들어오지</h3>
-              <p>여기에 뭐가 들어오면 좋을까</p>
+              <h3>선한 영향력을 펼치는 사장님</h3>
+              <p>을 위한 회원가입페이지 입니다.</p>
             </div>
 
             <form action="{% url 'accounts:signup' %}" method="post" class="d-inline">
@@ -120,9 +124,9 @@
 
       <div class="row container text-center">
         <!-- Single Judges Area -->
-        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="  col-lg-3 text-center" >
           <div class="single-team-member-area mb-80">
-            <div class="team-member-thumbnail">
+            <div class="team-member-thumbnail ">
               <!-- Thumbnail -->
               <img src="{% static './img/bg-img/organicJane.jpg' %}" alt="">
 
@@ -150,7 +154,7 @@
         </div>
 
         <!-- Single Judges Area -->
-        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="  col-lg-3">
           <div class="single-team-member-area mb-80">
             <div class="team-member-thumbnail">
               <!-- Thumbnail -->

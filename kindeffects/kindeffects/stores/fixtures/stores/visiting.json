@@ -1,0 +1,26 @@
+[
+{
+    "model": "stores.visiting",
+    "pk": 1,
+    "fields": {
+        "visiting_time": "2020-07-05T10:37:11.301Z",
+        "store": 1
+    }
+},
+{
+    "model": "stores.visiting",
+    "pk": 2,
+    "fields": {
+        "visiting_time": "2020-07-05T10:37:39.187Z",
+        "store": 1
+    }
+},
+{
+    "model": "stores.visiting",
+    "pk": 3,
+    "fields": {
+        "visiting_time": "2020-07-05T10:37:57.782Z",
+        "store": 1
+    }
+}
+]
