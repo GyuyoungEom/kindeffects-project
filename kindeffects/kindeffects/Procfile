@@ -1,0 +1,1 @@
+web: gunicorn kindeffectss.wsgi --log-file -
