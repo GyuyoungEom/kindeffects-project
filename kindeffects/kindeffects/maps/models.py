@@ -12,6 +12,6 @@ class Code(models.Model):
 class Map(models.Model):
     lat = models.FloatField()
     lon = models.FloatField()
-    dong = models.CharField(max_length=200)
+    # dong = models.CharField(max_length=200)
     store = models.OneToOneField(Store,on_delete=models.CASCADE)
-    code = models.ForeignKey(Code,on_delete=models.CASCADE)
+    # code = models.one(Code,on_delete=models.CASCADE)

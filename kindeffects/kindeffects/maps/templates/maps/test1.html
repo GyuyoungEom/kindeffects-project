@@ -9,12 +9,15 @@
                     center : new kakao.maps.LatLng(36.2683, 127.6358), // 지도의 중심좌표
                     level : 14, // 지도의 확대 레벨
                 });
+
             var clusterer = new kakao.maps.MarkerClusterer({
                     map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
                     averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
-                    minLevel: 10 // 클러스터 할 최소 지도 레벨 
+                    minLevel: 10, // 클러스터 할 최소 지도 레벨 
+                    disableClickZoom: true // 클러스터 마커를 클릭했을 때 지도가 확대되지 않도록 설정한다
                 });
 
+            console.log(map);
             $.get("/maps/json", function(data) {
                     // 데이터에서 좌표 값을 가지고 마커를 표시합니다
                     // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
@@ -51,84 +54,51 @@
                     infowindow.close();
                 };
             }
+            
 
-            var polygonPath1 = [];
-            var polygonPath2 = [];
-            var polygonPath3 = [];
-            var polygonPath4 = [];
-            var polygonPath5 = [];
-            var polygonPath6 = [];
-            var polygonPath7 = [];
-            var polygonPath8 = [];
-            var polygonPath9 = [];
-            var polygonPath10 = [];
-            var polygonPath11 = [];
-            var polygonPath12 = [];
-            var polygonPath13 = [];
-            var polygonPath14 = [];
-            var polygonPath15 = [];
-            var polygonPath16 = [];
-            var polygonPath17 = [];
-            var locCode = [];
+            kakao.maps.event.addListener(clusterer, 'clusterclick', function(cluster) {
+                
+                $.get("/static/maps/gungu.json", function(data){
+
+                    var latlngs = $(data).map(function(i, features){
+                        var gungus = features.features
+                        console.log(gungus);
+                        gungus.forEach((gungu)=>{
+                            var gunguName = gungu.properties.SIG_KOR_NM
+                            var gunguCode = gungu.properties.SIG_CD
+                            var coordinates = gungu.geometry.coordinates
+                            coordinates.forEach((coordinate)=>{
+                                var pointArray = []
+                                coordinate.forEach((point)=>{
+                                    // console.log(point)
+                                    var path = new kakao.maps.LatLng(point[1], point[0])
+                                    pointArray.push(path)
+                                }) 
+                                var polygon = new kakao.maps.Polygon({
+                                    path:pointArray, // 그려질 다각형의 좌표 배열입니다
+                                    strokeWeight: 3, // 선의 두께입니다
+                                    strokeColor: '#39DE2A', // 선의 색깔입니다
+                                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                                    strokeStyle: 'longdash', // 선의 스타일입니다
+                                    fillColor: '#11111', // 채우기 색깔입니다
+                                    fillOpacity: 0.7 // 채우기 불투명도 입니다
+                                });
+                                polygon.setMap(map);                            
+                            })
+                            
+                            //console.log(gunguName);
+                        });
+                    });
+                }); 
+                // 현재 지도 레벨에서 1레벨 확대한 레벨
+                var level = map.getLevel()-1;
+
+                // 지도를 클릭된 클러스터의 마커의 위치를 기준으로 확대합니다
+                map.setLevel(level, {anchor: cluster.getCenter()});
+            });
+
+
             $.get("/static/maps/do.json", function(data){
-                // 원래 코드 시작
-                // var latlngs = $(data).map(function(i, features){
-                //     console.log(features.features.length);
-                //     for(var n=0; n<features.features.length; n++){
-                //         var doLen = features.features[n].geometry.coordinates[0].length;
-                //         //var code = features.features[n].properties.CTPRVN_CD;
-                //         //locCode.push(Number(code));
-                //         console.log(features.features[n].geometry.coordinates);
-                //         for(var j=0; j<features.features[n].geometry.coordinates.length; j++){
-                //             console.log("len : "+features.features[n].geometry.coordinates.length);
-                //             for(var k=0; k<doLen; k++){
-                //                 var path = new kakao.maps.LatLng(features.features[n].geometry.coordinates[j][k][1],features.features[n].geometry.coordinates[j][k][0]);
-                //                 code2 = features.features[n].properties.CTPRVN_CD;
-                //                 //console.log(n+"번째 : "+features.features[n].geometry.coordinates[j][k]);
-                //                 if(code2=='42'){
-                //                     polygonPath1.push(path);
-                //                 }else if(code2=='41'){
-                //                     polygonPath2.push(path);
-                //                 }else if(code2=='48'){
-                //                     polygonPath3.push(path);
-                //                 }else if(code2=='47'){
-                //                     polygonPath4.push(path);
-                //                 }else if(code2=='29'){
-                //                     polygonPath5.push(path);
-                //                 }else if(code2=='27'){
-                //                     polygonPath6.push(path);
-                //                 }else if(code2=='30'){
-                //                     polygonPath7.push(path);
-                //                 }else if(code2=='26'){
-                //                     polygonPath8.push(path);
-                //                 }else if(code2=='11'){
-                //                     polygonPath9.push(path);
-                //                 }else if(code2=='36'){
-                //                     polygonPath10.push(path);
-                //                 }else if(code2=='31'){
-                //                     polygonPath11.push(path);
-                //                 }else if(code2=='28'){
-                //                     polygonPath12.push(path);
-                //                 }else if(code2=='46'){
-                //                     polygonPath13.push(path);
-                //                 }else if(code2=='45'){
-                //                     polygonPath14.push(path);
-                //                 }else if(code2=='50'){
-                //                     polygonPath15.push(path);
-                //                 }else if(code2=='44'){
-                //                     polygonPath16.push(path);
-                //                 }else if(code2=='43'){
-                //                     polygonPath17.push(path);
-                //                 }else{
-                //                     console.log(code2 + " :탈락");
-                //                 }
-                //             }
-                //         }
-                        
-                //     }
-                //         console.log(polygonPath3.length);
-                // });
-                // 코드 끝
 
                 var latlngs = $(data).map(function(i, features){
                     var sidos = features.features
@@ -136,7 +106,7 @@
                     sidos.forEach((sido)=>{
                         var sidoName = sido.properties.CTP_KOR_NM
                         var sidoCode = sido.properties.CTPRVN_CD
-                        console.log(sidoName)
+                        //console.log(sidoName)
                         var coordinates = sido.geometry.coordinates
                         coordinates.forEach((coordinate)=>{
                             var pointArray = []
@@ -200,188 +170,7 @@
                     })
 
                 });
-
-
-
-
-
-
-
-
-
-                //console.log("poly"+ typeof(polygonPath));
-                //console.log("히어: "+typeof(latlngs));
-                var polygon1 = new kakao.maps.Polygon({
-                    path:polygonPath1, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon2 = new kakao.maps.Polygon({
-                    path:polygonPath2, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon3 = new kakao.maps.Polygon({
-                    path:polygonPath3, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon4 = new kakao.maps.Polygon({
-                    path:polygonPath4, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon5 = new kakao.maps.Polygon({
-                    path:polygonPath5, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon6 = new kakao.maps.Polygon({
-                    path:polygonPath6, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon7 = new kakao.maps.Polygon({
-                    path:polygonPath7, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon8 = new kakao.maps.Polygon({
-                    path:polygonPath8, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon9 = new kakao.maps.Polygon({
-                    path:polygonPath9, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon10 = new kakao.maps.Polygon({
-                    path:polygonPath10, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon11 = new kakao.maps.Polygon({
-                    path:polygonPath11, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon12 = new kakao.maps.Polygon({
-                    path:polygonPath12, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon13 = new kakao.maps.Polygon({
-                    path:polygonPath13, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon14 = new kakao.maps.Polygon({
-                    path:polygonPath14, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon15 = new kakao.maps.Polygon({
-                    path:polygonPath15, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon16 = new kakao.maps.Polygon({
-                    path:polygonPath16, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                var polygon17 = new kakao.maps.Polygon({
-                    path:polygonPath17, // 그려질 다각형의 좌표 배열입니다
-                    strokeWeight: 3, // 선의 두께입니다
-                    strokeColor: '#39DE2A', // 선의 색깔입니다
-                    strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                    strokeStyle: 'longdash', // 선의 스타일입니다
-                    fillColor: '#A2FF99', // 채우기 색깔입니다
-                    fillOpacity: 0.7 // 채우기 불투명도 입니다
-                });
-                // 지도에 다각형을 표시합니다
-                polygon1.setMap(map);     
-                polygon2.setMap(map);     
-                polygon3.setMap(map);     
-                polygon4.setMap(map);     
-                polygon5.setMap(map);     
-                polygon6.setMap(map);     
-                polygon7.setMap(map);     
-                polygon8.setMap(map);     
-                polygon9.setMap(map);     
-                polygon10.setMap(map);     
-                polygon11.setMap(map);     
-                polygon12.setMap(map);     
-                polygon13.setMap(map);     
-                polygon14.setMap(map);     
-                polygon15.setMap(map);     
-                polygon16.setMap(map);     
-                polygon17.setMap(map);     
             });      
+              
     </script>
 {% endblock %}

@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render
+from django.core.paginator import Paginator
 from .models import Store, Visiting
 from maps.models import Map
 from .forms import StoreForm
@@ -14,6 +15,9 @@ import qrcode.image.svg
 # Create your views here.
 def index(request):
     stores = Store.objects.all()
+    paginator = Paginator(stores,10)
+    page_num = request.GET.get('page')
+    stores = paginator.get_page(page_num)
     context = {
         'stores' : stores,
     }

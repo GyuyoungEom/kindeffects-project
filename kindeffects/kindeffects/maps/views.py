@@ -52,7 +52,7 @@ def ajtest(request):
 
 def json(request):
     maps = list(Map.objects.all())
-    map_json = serializers.serialize('json', maps)
+    map_json = serializers.serialize('json', maps, use_natural_foreign_keys=True)
     return HttpResponse(map_json, content_type='application/json')
 
 
@@ -78,3 +78,15 @@ def index(request):
         'stores': stores,
     }
     return render(request, 'maps/index.html', context)
+
+
+def about(request):
+    return render(request, 'maps/about.html')
+
+
+def about_user(request):
+    return render(request, 'maps/about_user.html')
+
+
+def about_partner(request):
+    return render(request, 'maps/about_partner.html')

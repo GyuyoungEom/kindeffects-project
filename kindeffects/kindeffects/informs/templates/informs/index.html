@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+.card-img{
+  width: 500px;
+  height: 303px;
+  text-align: center;
+}
+.kd{
+  margin-left: 100px;
+}
+
+.card-title{
+  font-family: 'Gugi', cursive;
+  font-size: 30px;
+}
+
+
+.card-text{
+  font-family: 'Gugi', cursive;
+  font-size: 19px;
+}
+{% endblock  %}
+{% block content %}
+<br><br>
+
+<div class="kd">
+  <div class="row no-gutters">
+    <div class="col-md-7">
+    <br>
+      <img src="{% static 'img/core-img/kids.png' %}" class="card-img" >
+    </div>
+    <div class="col-md-5 pull-right">
+      <div class="card-body">
+        <h3 class="card-title">선과 함께는</h3>
+        <p class="card-text"><b>'선한 영향력 프로젝트'</b>에 동참 하는 이들에 대한<br><b>지지</b>와 <b>응원</b>,<b>감사함</b>을 보내고</p>
+         <br>
+         <br>
+         <br>
+         <p class="card-text">사회에 재조명 되어야 될 곳을 위해<br><b> 함께 행동하고</b>, <b> 함께 실제적인 변화</b>를 <br> 만들어 가는 사이트 입니다.</p>
+   
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br>
+  <div class="row no-gutters">
+    <div class="col-md-5">
+    <br>
+      <h3 class="card-title">'선한 영향력 프로젝트'란?</h3>
+      <p class="card-text"><b>결식 아동</b>들에게<br><b>따뜻한 밥 한 끼</b>를 제공하거나</p>
+      <br>
+      <br>
+      <br>
+      <p class="card-text">아이들 일상에 다양한 방식으로 <br> <b>도움을 주고자 하는 업체</b>들이<br> 함께하는 <b>프로젝트</b> 입니다.</p>
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+       <img src="{% static 'img/core-img/kindeffects.png' %}" class="card-img" >
+      </div>
+    </div>
+  </div>
+</div>
+  <br><br><br><br><br><br>
+<div class="kd">
+  <div class="row no-gutters">
+    <div class="col-md-7">
+      <img src="{% static 'img/core-img/kids2.png' %}" class="card-img" >
+    </div>
+    <div class="col-md-5 pull-right">
+      <div class="card-body">
+        <h3 class="card-title">결식 아동들을 위한 도움들이 </h3>
+       
+         <br>
+         <br>
+         <br>
+         <p class="card-text">가장 <b>필요</b>한 곳에 <br>가장 <b>의미</b> 있게 쓰일 수 있도록.</p>
+   
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
+{% endblock  %}

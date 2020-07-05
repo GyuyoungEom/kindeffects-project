@@ -9,6 +9,7 @@
     function onPrint() {      
       const chartDiv = document.querySelector('.chartdiv');
       const footerDiv = document.querySelector('footer');
+      const button = document.querySelector('.btn');
       //const printContents = document.querySelector('svg').innerHTML;
       const printDiv = document.createElement('DIV');
       //printDiv.className = 'print-div';
@@ -17,6 +18,7 @@
       // printDiv.img.src = "{% static 'img/core-img/logo.png' %}";
       chartDiv.style.display = 'none';
       footerDiv.style.display = 'none';
+      button.style.display = 'none';
       window.print();
 
       //chartDiv.style.display = 'block';
@@ -94,7 +96,6 @@
         </div>
       </div>
       <!--업체정보 끝-->
-      <a href="{% url 'accounts:update' %}" class="btn mona-btn btn-2 mt-15 pull-right">회원 정보 및 가게 정보 수정</a>
     </div>
   </section>
   <!-- ***** 업체정보 끝 ***** -->
