@@ -209,6 +209,15 @@ dmypy.json
 *.3dm
 *.max
 
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
+
+# 환경 설정 관련 파일(뒤에서 설정할 것)
+.env
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 
