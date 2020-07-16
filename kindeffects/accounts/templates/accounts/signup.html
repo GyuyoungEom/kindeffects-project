@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block style %}
+.top-search-area{
+  text-align: center;
+}
+{% endblock  %}
+{% block content %}
+  <!-- ***** Top Search Area Start ***** -->
+    <div class="top-search-area">
+      <!-- Search Modal -->
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <!-- Close Button -->
+              <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+              <!-- Form -->
+              <form action="{% url 'accounts:login' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" class="form-control" placeholder="아이디">
+                <input type="password" name="password" class="form-control" placeholder="비밀번호">
+                <button type="submit">SingIn</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Top Search Area End ***** -->
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area">
+    <div class="container h-100">
+      <div class="row h-100 align-items-end">
+        <div class="col-12">
+          <div class="breadcumb--con">
+            <h2 class="title">Signup</h2>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Signup</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ***** Casting Form Area Start ***** -->
+  <section class="mona-casting-form-area section-padding-80-0">
+    <div class="container">
+          <div class="casting-form mona-contact-form mb-80 container">
+            <div class="contact-heading">
+              <h3>선한 영향력을 펼치는 사장님</h3>
+              <p>을 위한 회원가입페이지 입니다.</p>
+            </div>
+
+            <form action="{% url 'accounts:signup' %}" method="post" class="d-inline">
+              {% csrf_token %}
+              {% bootstrap_form form %}
+              {% comment %} {{ form.as_table }} {% endcomment %}
+              {% comment %} {% for field in form %}
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {{ field }}
+              {% endfor %} {% endcomment %}
+              {% comment %} <div>
+                {{ form.errors }}
+              </div>
+              <div>
+                {{ form.username.label_tag }}
+                {{ form.username }}
+                {{ form.username.help_text }}
+              </div>
+              <div>
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+                {{ form.password1.help_text }}                
+              </div>
+              <div>
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+                {{ form.password2.help_text }}
+              </div>
+              <div>
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
+              </div>
+              <div>
+                {{ form.name_kr.label_tag }}
+                {{ form.name_kr }}
+              </div>
+              <div>
+                {{ form.store_regist.label_tag }}
+                {{ form.store_regist }}
+              </div>
+              <div>
+                {{ form.store.label_tag }}
+                {{ form.store }}
+              </div> {% endcomment %}
+
+              <button class="btn mona-btn btn-2 mt-15">SignUp</button>
+            </form>
+
+          </div>
+    </div>
+  </section>
+  <!-- ***** Casting Form Area End ***** -->
+
+  <!-- ***** Our Judges Area Start ***** -->
+  <section class="mona-team-area">
+    <div class="container">
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center">
+            <h2>함께하고 있는 기업들</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row container text-center">
+        <!-- Single Judges Area -->
+        <div class="  col-lg-3 text-center" >
+          <div class="single-team-member-area mb-80">
+            <div class="team-member-thumbnail ">
+              <!-- Thumbnail -->
+              <img src="{% static './img/bg-img/organicJane.jpg' %}" alt="">
+
+              <!-- Share Info -->
+              <div class="share-info">
+                <!-- Share Icon -->
+                <div class="share-icon">
+                  <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                </div>
+                <!-- Others Icon -->
+                <div class="others-icon">
+                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-member-info">
+              <h4>Organic Jane</h4>
+              <h6>choreographer</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Judges Area -->
+        <div class="  col-lg-3">
+          <div class="single-team-member-area mb-80">
+            <div class="team-member-thumbnail">
+              <!-- Thumbnail -->
+              <img src="{% static './img/bg-img/genesis.jpg' %}" >
+
+              <!-- Share Info -->
+              <div class="share-info">
+                <!-- Share Icon -->
+                <div class="share-icon">
+                  <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                </div>
+                <!-- Others Icon -->
+                <div class="others-icon">
+                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-member-info">
+              <h4>Genesis BBQ</h4>
+              <h6>Model</h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ***** Our Judges Area End ***** -->
+
+
+{% endblock %}

@@ -1,0 +1,1802 @@
+[
+{
+    "model": "maps.map",
+    "pk": 1,
+    "fields": {
+        "lat": 37.502094,
+        "lon": 127.0398,
+        "store": 1
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 2,
+    "fields": {
+        "lat": 37.56074243,
+        "lon": 127.029133,
+        "store": 2
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 3,
+    "fields": {
+        "lat": 37.29296621,
+        "lon": 126.8681568,
+        "store": 3
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 4,
+    "fields": {
+        "lat": 37.49413459,
+        "lon": 126.4907892,
+        "store": 4
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 5,
+    "fields": {
+        "lat": 37.46086408,
+        "lon": 126.7328575,
+        "store": 5
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 6,
+    "fields": {
+        "lat": 37.55321661,
+        "lon": 126.9206941,
+        "store": 6
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 7,
+    "fields": {
+        "lat": 37.55303862,
+        "lon": 126.9064738,
+        "store": 7
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 8,
+    "fields": {
+        "lat": 37.27279424,
+        "lon": 126.9422178,
+        "store": 8
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 9,
+    "fields": {
+        "lat": 37.32798036,
+        "lon": 127.9439675,
+        "store": 9
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 10,
+    "fields": {
+        "lat": 35.53659596,
+        "lon": 129.326488,
+        "store": 10
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 11,
+    "fields": {
+        "lat": 37.27512023,
+        "lon": 127.043825,
+        "store": 11
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 12,
+    "fields": {
+        "lat": 37.55321661,
+        "lon": 126.9206941,
+        "store": 12
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 13,
+    "fields": {
+        "lat": 37.55719885,
+        "lon": 126.9421066,
+        "store": 13
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 14,
+    "fields": {
+        "lat": 37.54080502,
+        "lon": 126.9459462,
+        "store": 14
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 15,
+    "fields": {
+        "lat": 37.54995975,
+        "lon": 126.9366063,
+        "store": 15
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 16,
+    "fields": {
+        "lat": 37.66044664,
+        "lon": 126.7688967,
+        "store": 16
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 17,
+    "fields": {
+        "lat": 37.73781038,
+        "lon": 127.0445537,
+        "store": 17
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 18,
+    "fields": {
+        "lat": 37.65908383,
+        "lon": 126.7702878,
+        "store": 18
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 19,
+    "fields": {
+        "lat": 37.00017931,
+        "lon": 127.1155848,
+        "store": 19
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 20,
+    "fields": {
+        "lat": 37.6716351,
+        "lon": 126.7368254,
+        "store": 20
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 21,
+    "fields": {
+        "lat": 35.12494399,
+        "lon": 126.3183341,
+        "store": 21
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 22,
+    "fields": {
+        "lat": 35.23966684,
+        "lon": 128.6544087,
+        "store": 22
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 23,
+    "fields": {
+        "lat": 36.30705799,
+        "lon": 127.4561342,
+        "store": 23
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 24,
+    "fields": {
+        "lat": 35.16892063,
+        "lon": 126.8127597,
+        "store": 24
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 25,
+    "fields": {
+        "lat": 35.8069584,
+        "lon": 128.5373242,
+        "store": 25
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 26,
+    "fields": {
+        "lat": 35.88806006,
+        "lon": 128.5823226,
+        "store": 26
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 27,
+    "fields": {
+        "lat": 37.46086408,
+        "lon": 126.7328575,
+        "store": 27
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 28,
+    "fields": {
+        "lat": 37.49413459,
+        "lon": 126.4907892,
+        "store": 28
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 29,
+    "fields": {
+        "lat": 35.53659596,
+        "lon": 129.326488,
+        "store": 29
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 30,
+    "fields": {
+        "lat": 35.77270708,
+        "lon": 129.3071979,
+        "store": 30
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 31,
+    "fields": {
+        "lat": 37.59790001,
+        "lon": 126.9226369,
+        "store": 31
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 32,
+    "fields": {
+        "lat": 37.51366718,
+        "lon": 127.1088384,
+        "store": 32
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 33,
+    "fields": {
+        "lat": 37.20748912,
+        "lon": 127.0351161,
+        "store": 33
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 34,
+    "fields": {
+        "lat": 37.30942046,
+        "lon": 127.0859403,
+        "store": 34
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 35,
+    "fields": {
+        "lat": 37.62473958,
+        "lon": 126.8351966,
+        "store": 35
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 36,
+    "fields": {
+        "lat": 37.27512023,
+        "lon": 127.043825,
+        "store": 36
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 37,
+    "fields": {
+        "lat": 36.98622085,
+        "lon": 127.9387712,
+        "store": 37
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 38,
+    "fields": {
+        "lat": 37.51816396,
+        "lon": 126.7046354,
+        "store": 38
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 39,
+    "fields": {
+        "lat": 37.55514152,
+        "lon": 126.9101578,
+        "store": 39
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 40,
+    "fields": {
+        "lat": 35.17856522,
+        "lon": 129.1978988,
+        "store": 40
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 41,
+    "fields": {
+        "lat": 37.25986318,
+        "lon": 127.0194951,
+        "store": 41
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 42,
+    "fields": {
+        "lat": 37.4854317,
+        "lon": 126.5601617,
+        "store": 42
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 43,
+    "fields": {
+        "lat": 37.59391143,
+        "lon": 126.9169564,
+        "store": 43
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 44,
+    "fields": {
+        "lat": 37.54779467,
+        "lon": 126.9144924,
+        "store": 44
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 45,
+    "fields": {
+        "lat": 37.55522422,
+        "lon": 126.8588372,
+        "store": 45
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 46,
+    "fields": {
+        "lat": 37.45822291,
+        "lon": 126.8937104,
+        "store": 46
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 47,
+    "fields": {
+        "lat": 37.5481616,
+        "lon": 126.9214307,
+        "store": 47
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 48,
+    "fields": {
+        "lat": 37.55504559,
+        "lon": 127.0196502,
+        "store": 48
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 49,
+    "fields": {
+        "lat": 37.54061871,
+        "lon": 127.0561318,
+        "store": 49
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 50,
+    "fields": {
+        "lat": 37.48289606,
+        "lon": 127.0409932,
+        "store": 50
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 51,
+    "fields": {
+        "lat": 37.5665905,
+        "lon": 127.0240825,
+        "store": 51
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 52,
+    "fields": {
+        "lat": 37.48060476,
+        "lon": 127.1236662,
+        "store": 52
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 53,
+    "fields": {
+        "lat": 37.560773,
+        "lon": 127.0337972,
+        "store": 53
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 54,
+    "fields": {
+        "lat": 37.54930674,
+        "lon": 126.9095594,
+        "store": 54
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 55,
+    "fields": {
+        "lat": 37.50282977,
+        "lon": 126.9466128,
+        "store": 55
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 56,
+    "fields": {
+        "lat": 37.61855049,
+        "lon": 127.0188472,
+        "store": 56
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 57,
+    "fields": {
+        "lat": 37.54037075,
+        "lon": 126.948604,
+        "store": 57
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 58,
+    "fields": {
+        "lat": 37.57015459,
+        "lon": 127.0415234,
+        "store": 58
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 59,
+    "fields": {
+        "lat": 37.60654322,
+        "lon": 127.0622674,
+        "store": 59
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 60,
+    "fields": {
+        "lat": 37.53282735,
+        "lon": 126.8369924,
+        "store": 60
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 61,
+    "fields": {
+        "lat": 37.52622834,
+        "lon": 127.0491342,
+        "store": 61
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 62,
+    "fields": {
+        "lat": 37.57573135,
+        "lon": 127.0828129,
+        "store": 62
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 63,
+    "fields": {
+        "lat": 37.50994218,
+        "lon": 127.0418328,
+        "store": 63
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 64,
+    "fields": {
+        "lat": 37.50910732,
+        "lon": 127.1257706,
+        "store": 64
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 65,
+    "fields": {
+        "lat": 37.55732978,
+        "lon": 126.9279055,
+        "store": 65
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 66,
+    "fields": {
+        "lat": 37.52755474,
+        "lon": 126.8606038,
+        "store": 66
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 67,
+    "fields": {
+        "lat": 37.65133318,
+        "lon": 127.0121453,
+        "store": 67
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 68,
+    "fields": {
+        "lat": 37.4771944,
+        "lon": 127.1422812,
+        "store": 68
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 69,
+    "fields": {
+        "lat": 37.63753667,
+        "lon": 126.9179003,
+        "store": 69
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 70,
+    "fields": {
+        "lat": 37.49005189,
+        "lon": 126.8376753,
+        "store": 70
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 71,
+    "fields": {
+        "lat": 37.55059295,
+        "lon": 126.8730786,
+        "store": 71
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 72,
+    "fields": {
+        "lat": 37.49704868,
+        "lon": 127.0286271,
+        "store": 72
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 73,
+    "fields": {
+        "lat": 37.59275828,
+        "lon": 127.0523501,
+        "store": 73
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 74,
+    "fields": {
+        "lat": 37.59174748,
+        "lon": 127.0521029,
+        "store": 74
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 75,
+    "fields": {
+        "lat": 37.59125283,
+        "lon": 127.0529196,
+        "store": 75
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 76,
+    "fields": {
+        "lat": 37.56267076,
+        "lon": 126.9257975,
+        "store": 76
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 77,
+    "fields": {
+        "lat": 37.4666746,
+        "lon": 126.9080176,
+        "store": 77
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 78,
+    "fields": {
+        "lat": 37.67020572,
+        "lon": 127.0421256,
+        "store": 78
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 79,
+    "fields": {
+        "lat": 37.48065002,
+        "lon": 126.9995315,
+        "store": 79
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 80,
+    "fields": {
+        "lat": 37.61005535,
+        "lon": 127.0098281,
+        "store": 80
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 81,
+    "fields": {
+        "lat": 37.5608152,
+        "lon": 126.9639016,
+        "store": 81
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 82,
+    "fields": {
+        "lat": 37.58959975,
+        "lon": 127.0613659,
+        "store": 82
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 83,
+    "fields": {
+        "lat": 37.54610203,
+        "lon": 126.9225476,
+        "store": 83
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 84,
+    "fields": {
+        "lat": 37.55882481,
+        "lon": 126.8310076,
+        "store": 84
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 85,
+    "fields": {
+        "lat": 37.58474982,
+        "lon": 127.0510942,
+        "store": 85
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 86,
+    "fields": {
+        "lat": 37.48847002,
+        "lon": 126.890773,
+        "store": 86
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 87,
+    "fields": {
+        "lat": 37.60654322,
+        "lon": 127.0622674,
+        "store": 87
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 88,
+    "fields": {
+        "lat": 37.45923433,
+        "lon": 126.9047305,
+        "store": 88
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 89,
+    "fields": {
+        "lat": 37.63753667,
+        "lon": 126.9179003,
+        "store": 89
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 90,
+    "fields": {
+        "lat": 37.53153686,
+        "lon": 127.078753,
+        "store": 90
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 91,
+    "fields": {
+        "lat": 37.54918544,
+        "lon": 126.8359549,
+        "store": 91
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 92,
+    "fields": {
+        "lat": 37.5584802,
+        "lon": 126.8343276,
+        "store": 92
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 93,
+    "fields": {
+        "lat": 37.58664677,
+        "lon": 126.9198875,
+        "store": 93
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 94,
+    "fields": {
+        "lat": 37.57852975,
+        "lon": 126.8942848,
+        "store": 94
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 95,
+    "fields": {
+        "lat": 37.56128783,
+        "lon": 127.0633535,
+        "store": 95
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 96,
+    "fields": {
+        "lat": 37.57658324,
+        "lon": 126.8940728,
+        "store": 96
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 97,
+    "fields": {
+        "lat": 37.53071074,
+        "lon": 126.8511282,
+        "store": 97
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 98,
+    "fields": {
+        "lat": 37.49828789,
+        "lon": 126.8727311,
+        "store": 98
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 99,
+    "fields": {
+        "lat": 37.50061269,
+        "lon": 126.8666344,
+        "store": 99
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 100,
+    "fields": {
+        "lat": 37.51056371,
+        "lon": 127.0824106,
+        "store": 100
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 101,
+    "fields": {
+        "lat": 37.54025588,
+        "lon": 127.068736,
+        "store": 101
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 102,
+    "fields": {
+        "lat": 37.55666553,
+        "lon": 126.9022894,
+        "store": 102
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 103,
+    "fields": {
+        "lat": 37.59232195,
+        "lon": 127.0508587,
+        "store": 103
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 104,
+    "fields": {
+        "lat": 37.55015029,
+        "lon": 126.9202209,
+        "store": 104
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 105,
+    "fields": {
+        "lat": 37.48367843,
+        "lon": 126.8954191,
+        "store": 105
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 106,
+    "fields": {
+        "lat": 37.51411438,
+        "lon": 127.1108327,
+        "store": 106
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 107,
+    "fields": {
+        "lat": 37.494267,
+        "lon": 127.0346878,
+        "store": 107
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 108,
+    "fields": {
+        "lat": 37.50274823,
+        "lon": 127.0239118,
+        "store": 108
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 109,
+    "fields": {
+        "lat": 37.76904181,
+        "lon": 128.8794996,
+        "store": 109
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 110,
+    "fields": {
+        "lat": 37.76008496,
+        "lon": 128.9191412,
+        "store": 110
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 111,
+    "fields": {
+        "lat": 37.15580469,
+        "lon": 128.9885252,
+        "store": 111
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 112,
+    "fields": {
+        "lat": 37.47768758,
+        "lon": 129.1588686,
+        "store": 112
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 113,
+    "fields": {
+        "lat": 37.85361477,
+        "lon": 127.7548011,
+        "store": 113
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 114,
+    "fields": {
+        "lat": 37.10186267,
+        "lon": 129.0094059,
+        "store": 114
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 115,
+    "fields": {
+        "lat": 37.32076009,
+        "lon": 127.9434604,
+        "store": 115
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 116,
+    "fields": {
+        "lat": 37.86105853,
+        "lon": 127.7452558,
+        "store": 116
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 117,
+    "fields": {
+        "lat": 37.76563264,
+        "lon": 128.8924094,
+        "store": 117
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 118,
+    "fields": {
+        "lat": 37.32408841,
+        "lon": 127.9507058,
+        "store": 118
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 119,
+    "fields": {
+        "lat": 36.32942896,
+        "lon": 127.3885588,
+        "store": 119
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 120,
+    "fields": {
+        "lat": 36.35097806,
+        "lon": 127.3881439,
+        "store": 120
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 121,
+    "fields": {
+        "lat": 36.97915459,
+        "lon": 127.9136804,
+        "store": 121
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 122,
+    "fields": {
+        "lat": 36.66416219,
+        "lon": 127.5005345,
+        "store": 122
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 123,
+    "fields": {
+        "lat": 36.80772905,
+        "lon": 127.7920085,
+        "store": 123
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 124,
+    "fields": {
+        "lat": 36.63451506,
+        "lon": 127.4583017,
+        "store": 124
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 125,
+    "fields": {
+        "lat": 36.64754182,
+        "lon": 127.4774027,
+        "store": 125
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 126,
+    "fields": {
+        "lat": 36.60832693,
+        "lon": 127.4885359,
+        "store": 126
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 127,
+    "fields": {
+        "lat": 36.62804003,
+        "lon": 127.4247097,
+        "store": 127
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 128,
+    "fields": {
+        "lat": 36.85567862,
+        "lon": 127.0990125,
+        "store": 128
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 129,
+    "fields": {
+        "lat": 36.82233247,
+        "lon": 127.1432231,
+        "store": 129
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 130,
+    "fields": {
+        "lat": 36.81238602,
+        "lon": 127.1081918,
+        "store": 130
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 131,
+    "fields": {
+        "lat": 36.81697166,
+        "lon": 127.1086065,
+        "store": 131
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 132,
+    "fields": {
+        "lat": 36.87308688,
+        "lon": 127.2008963,
+        "store": 132
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 133,
+    "fields": {
+        "lat": 36.90100653,
+        "lon": 126.6326707,
+        "store": 133
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 134,
+    "fields": {
+        "lat": 36.88463517,
+        "lon": 126.6454795,
+        "store": 134
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 135,
+    "fields": {
+        "lat": 36.873633,
+        "lon": 126.6373946,
+        "store": 135
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 136,
+    "fields": {
+        "lat": 36.6081434,
+        "lon": 127.2907884,
+        "store": 136
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 137,
+    "fields": {
+        "lat": 36.72141543,
+        "lon": 127.1577257,
+        "store": 137
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 138,
+    "fields": {
+        "lat": 36.60943676,
+        "lon": 127.2921335,
+        "store": 138
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 139,
+    "fields": {
+        "lat": 35.21363918,
+        "lon": 126.8464284,
+        "store": 139
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 140,
+    "fields": {
+        "lat": 35.17444854,
+        "lon": 126.8733353,
+        "store": 140
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 141,
+    "fields": {
+        "lat": 35.14591937,
+        "lon": 126.9296821,
+        "store": 141
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 142,
+    "fields": {
+        "lat": 35.15111919,
+        "lon": 126.8559594,
+        "store": 142
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 143,
+    "fields": {
+        "lat": 35.18082985,
+        "lon": 126.8939501,
+        "store": 143
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 144,
+    "fields": {
+        "lat": 35.95488522,
+        "lon": 126.9712828,
+        "store": 144
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 145,
+    "fields": {
+        "lat": 35.94789286,
+        "lon": 126.9667885,
+        "store": 145
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 146,
+    "fields": {
+        "lat": 35.98833121,
+        "lon": 126.7106549,
+        "store": 146
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 147,
+    "fields": {
+        "lat": 35.95310379,
+        "lon": 126.9799941,
+        "store": 147
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 148,
+    "fields": {
+        "lat": 35.82599857,
+        "lon": 127.1760343,
+        "store": 148
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 149,
+    "fields": {
+        "lat": 36.00118429,
+        "lon": 126.944765,
+        "store": 149
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 150,
+    "fields": {
+        "lat": 35.17123763,
+        "lon": 126.9040228,
+        "store": 150
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 151,
+    "fields": {
+        "lat": 34.31563656,
+        "lon": 126.7536267,
+        "store": 151
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 152,
+    "fields": {
+        "lat": 34.96701595,
+        "lon": 127.4854704,
+        "store": 152
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 153,
+    "fields": {
+        "lat": 35.06418385,
+        "lon": 126.520088,
+        "store": 153
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 154,
+    "fields": {
+        "lat": 34.7624752,
+        "lon": 127.6208796,
+        "store": 154
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 155,
+    "fields": {
+        "lat": 34.93214065,
+        "lon": 127.4948362,
+        "store": 155
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 156,
+    "fields": {
+        "lat": 36.1162772,
+        "lon": 128.1841566,
+        "store": 156
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 157,
+    "fields": {
+        "lat": 36.1384948,
+        "lon": 128.0943949,
+        "store": 157
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 158,
+    "fields": {
+        "lat": 36.57768736,
+        "lon": 128.5029199,
+        "store": 158
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 159,
+    "fields": {
+        "lat": 36.57930089,
+        "lon": 128.5003875,
+        "store": 159
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 160,
+    "fields": {
+        "lat": 35.97229199,
+        "lon": 128.9366346,
+        "store": 160
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 161,
+    "fields": {
+        "lat": 35.87373558,
+        "lon": 129.1910788,
+        "store": 161
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 162,
+    "fields": {
+        "lat": 35.8517321,
+        "lon": 129.2285571,
+        "store": 162
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 163,
+    "fields": {
+        "lat": 35.22996465,
+        "lon": 128.5750931,
+        "store": 163
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 164,
+    "fields": {
+        "lat": 34.89150757,
+        "lon": 128.6364541,
+        "store": 164
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 165,
+    "fields": {
+        "lat": 34.86707951,
+        "lon": 128.6866847,
+        "store": 165
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 166,
+    "fields": {
+        "lat": 35.18081644,
+        "lon": 128.065606,
+        "store": 166
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 167,
+    "fields": {
+        "lat": 35.17588756,
+        "lon": 128.1481905,
+        "store": 167
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 168,
+    "fields": {
+        "lat": 35.21915406,
+        "lon": 128.6815253,
+        "store": 168
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 169,
+    "fields": {
+        "lat": 35.18565531,
+        "lon": 128.1570674,
+        "store": 169
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 170,
+    "fields": {
+        "lat": 35.3303212,
+        "lon": 129.0075347,
+        "store": 170
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 171,
+    "fields": {
+        "lat": 35.19170166,
+        "lon": 128.085615,
+        "store": 171
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 172,
+    "fields": {
+        "lat": 35.21888143,
+        "lon": 128.6850258,
+        "store": 172
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 173,
+    "fields": {
+        "lat": 35.23395984,
+        "lon": 128.8382042,
+        "store": 173
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 174,
+    "fields": {
+        "lat": 35.18018842,
+        "lon": 128.5577843,
+        "store": 174
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 175,
+    "fields": {
+        "lat": 34.86440046,
+        "lon": 128.6873688,
+        "store": 175
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 176,
+    "fields": {
+        "lat": 35.17674317,
+        "lon": 128.8140626,
+        "store": 176
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 177,
+    "fields": {
+        "lat": 35.24096319,
+        "lon": 128.5863061,
+        "store": 177
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 178,
+    "fields": {
+        "lat": 35.8673613,
+        "lon": 128.6063838,
+        "store": 178
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 179,
+    "fields": {
+        "lat": 35.69507248,
+        "lon": 128.4409932,
+        "store": 179
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 180,
+    "fields": {
+        "lat": 35.83064561,
+        "lon": 128.6185522,
+        "store": 180
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 181,
+    "fields": {
+        "lat": 35.86419504,
+        "lon": 128.4661309,
+        "store": 181
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 182,
+    "fields": {
+        "lat": 35.86106587,
+        "lon": 128.6472207,
+        "store": 182
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 183,
+    "fields": {
+        "lat": 35.88519453,
+        "lon": 128.589861,
+        "store": 183
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 184,
+    "fields": {
+        "lat": 35.89066202,
+        "lon": 128.5932402,
+        "store": 184
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 185,
+    "fields": {
+        "lat": 35.16616462,
+        "lon": 129.1578182,
+        "store": 185
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 186,
+    "fields": {
+        "lat": 35.20417858,
+        "lon": 129.0830641,
+        "store": 186
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 187,
+    "fields": {
+        "lat": 35.07700983,
+        "lon": 129.0164335,
+        "store": 187
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 188,
+    "fields": {
+        "lat": 35.15714875,
+        "lon": 129.061033,
+        "store": 188
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 189,
+    "fields": {
+        "lat": 35.15084467,
+        "lon": 129.1116766,
+        "store": 189
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 190,
+    "fields": {
+        "lat": 35.16797548,
+        "lon": 129.0348491,
+        "store": 190
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 191,
+    "fields": {
+        "lat": 35.14790032,
+        "lon": 129.030228,
+        "store": 191
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 192,
+    "fields": {
+        "lat": 35.56591427,
+        "lon": 129.3507209,
+        "store": 192
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 193,
+    "fields": {
+        "lat": 35.5470448,
+        "lon": 129.315227,
+        "store": 193
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 194,
+    "fields": {
+        "lat": 35.5655037,
+        "lon": 129.2663056,
+        "store": 194
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 195,
+    "fields": {
+        "lat": 35.56492154,
+        "lon": 129.1124745,
+        "store": 195
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 196,
+    "fields": {
+        "lat": 33.50509172,
+        "lon": 126.4676792,
+        "store": 196
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 197,
+    "fields": {
+        "lat": 33.47161102,
+        "lon": 126.4877418,
+        "store": 197
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 198,
+    "fields": {
+        "lat": 33.47065125,
+        "lon": 126.4882169,
+        "store": 198
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 199,
+    "fields": {
+        "lat": 33.47065125,
+        "lon": 126.4882169,
+        "store": 199
+    }
+},
+{
+    "model": "maps.map",
+    "pk": 200,
+    "fields": {
+        "lat": 33.23539167,
+        "lon": 126.3695925,
+        "store": 200
+    }
+}
+]

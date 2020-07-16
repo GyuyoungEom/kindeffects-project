@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+      <div class="cssload-loader"></div>
+    </div>
+  </div>
+<!-- ***** Welcome Area Start ***** -->
+    <section class="welcome-area">
+        <!-- Welcome Slides -->
+        <div class="container">
+            <div id="map" style="width:100%; height:600px;" ></div>
+        </div> 
+    </section>
+  <!-- ***** Welcome Area End ***** -->
+
+  <!-- ***** About Us Area Start ***** -->
+    <section class="mona-about-us-area mb-30 section-padding-80-0">
+        <!-- Single Service Area -->
+        <div class="container">
+            <div class="service-area mt-80">
+                <div class="row">
+                    <!-- Single Service Area -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+                            <a href="{% url 'maps:about' %}"><img src="{% static 'img/core-img/favicon1.png' %}" width="70px"></a>
+                            <h5>'선과 함께' 스토리</h5>
+                            <b> 함께 행동하고 <br> 함께 만드는 변화</b>
+                        </div>
+                    </div>
+
+                    <!-- Single Service Area -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="300ms">
+                            <a href="{% url 'stores:index' %}"><img src="{% static 'img/core-img/teamwork.png' %}" width="70px"></a>
+                            <h5>함께가는 파트너들</h5>
+                            <b>선한 영향력 프로젝트 <br> 동참 업체</b>
+                        </div>
+                    </div>
+
+                   
+                    <!-- Single Service Area -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="700ms">
+                            <a href="{% url 'stores:report' %}"><img src="{% static 'img/core-img/donation.png' %}" width="70px"></a>
+                            <h5>후원 리포트</h5>
+                            <b>가장 필요한 곳에 <br> 의미 있게 쓰여질 수 있도록</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class='col-md-8'>{% include 'stores/line_graph.html' %}</div>
+                <div class='col-md-4'>{% include 'stores/column_graph.html' %}</div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표시할 div
+                center : new kakao.maps.LatLng(35.924191, 127.795820), // 지도의 중심좌표
+                level : 13, // 지도의 확대 레벨
+            });
+        var clusterer = new kakao.maps.MarkerClusterer({
+                    map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+                    averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+                    minLevel: 10, // 클러스터 할 최소 지도 레벨 
+                    disableClickZoom: true // 클러스터 마커를 클릭했을 때 지도가 확대되지 않도록 설정한다
+                });
+
+        $.get("/maps/json", function(data) {
+                // 데이터에서 좌표 값을 가지고 마커를 표시합니다
+                // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
+                console.log(data)
+                var markers = $(data).map(function(i, fields) {
+                        var storeName = fields.fields.store;
+                        console.log(fields.pk) 
+                        
+                        var infoContent = "<a href='/stores/"+fields.pk+"/'>"+ storeName+"</a>"
+                        //console.log("{{ stores.k }}");
+                        var marker =  new kakao.maps.Marker({
+                            position : new kakao.maps.LatLng(fields.fields.lat, fields.fields.lon),
+                            clickable: true
+                        });
+                        var infowindow = new kakao.maps.InfoWindow({
+                            content: infoContent // 인포윈도우에 표시할 내용
+                        });
+
+                        // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+                        // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+                        // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+                        // 클러스터러에 마커들을 추가합니다
+                        kakao.maps.event.addListener(marker, 'click', makeClickListener(map, marker, infowindow));
+                        return marker
+                    });
+                clusterer.addMarkers(markers);
+
+            });;
+        function makeClickListener(map, marker, infowindow) {
+            // 마커 위에 인포윈도우를 표시합니다
+            return function() {
+                infowindow.open(map, marker);  
+            };
+        };
+        
+        var polygons = [];
+        var polygon;
+        kakao.maps.event.addListener(clusterer, 'clusterclick', function(cluster) {
+                
+                $.get("/static/maps/gungu.json", function(data){
+
+                    var latlngs = $(data).map(function(i, features){
+                        var gungus = features.features
+                        gungus.forEach((gungu)=>{
+                            var gunguName = gungu.properties.SIG_KOR_NM
+                            var gunguCode = gungu.properties.SIG_CD
+                            var coordinates = gungu.geometry.coordinates
+                            coordinates.forEach((coordinate)=>{
+                                var pointArray = []
+                                coordinate.forEach((point)=>{
+                                    // console.log(point)
+                                    var path = new kakao.maps.LatLng(point[1], point[0])
+                                    pointArray.push(path)
+                                }) 
+                                var polygonC = new kakao.maps.Polygon({
+                                    path:pointArray, // 그려질 다각형의 좌표 배열입니다
+                                    strokeWeight: 3, // 선의 두께입니다
+                                    strokeColor: '#009900', // 선의 색깔입니다
+                                    strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                                    strokeStyle: 'solid', // 선의 스타일입니다
+                                    fillColor: '#ffcc00', // 채우기 색깔입니다
+                                    fillOpacity: 0.11 // 채우기 불투명도 입니다
+                                });
+                                polygons.forEach((polygon)=>{
+                                    polygon.setMap(null); 
+                                })
+                                polygonC.setMap(map);                            
+                            })
+                            
+                            //console.log(gunguName);
+                        });
+                    });
+                }); 
+                // 현재 지도 레벨에서 1레벨 확대한 레벨
+                var level = map.getLevel()-1;
+
+                // 지도를 클릭된 클러스터의 마커의 위치를 기준으로 확대합니다
+                map.setLevel(level, {anchor: cluster.getCenter()});
+            });
+
+        $.get("/static/maps/do.json", function(data){
+            var latlngs = $(data).map(function(i, features){
+                    var sidos = features.features
+                    // console.log(sido)
+                    sidos.forEach((sido)=>{
+                        var sidoName = sido.properties.CTP_KOR_NM
+                        var sidoCode = sido.properties.CTPRVN_CD
+                        //console.log(sidoName)
+                        var coordinates = sido.geometry.coordinates
+                        coordinates.forEach((coordinate)=>{
+                            var pointArray = []
+                            coordinate.forEach((point)=>{
+                                var path = new kakao.maps.LatLng(point[1], point[0])
+                                pointArray.push(path)
+                            })
+                            var color = '#ffcc00'
+                            polygon = new kakao.maps.Polygon({
+                                path:pointArray, // 그려질 다각형의 좌표 배열입니다
+                                strokeWeight: 3, // 선의 두께입니다
+                                strokeColor: '#ff9933', // 선의 색깔입니다
+                                strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                                strokeStyle: 'longdash', // 선의 스타일입니다
+                                fillColor: color, // 채우기 색깔입니다
+                                fillOpacity: 0.85 // 채우기 불투명도 입니다
+                            });
+                            polygons.push(polygon);
+                            polygon.setMap(map);     
+                        })
+                    })
+
+                });
+        })        
+  </script>
+
+
+
+{% endblock %}
+
+

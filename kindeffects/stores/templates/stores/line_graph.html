@@ -1,0 +1,59 @@
+{% load static %}
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+<!-- Chart code -->
+<script>
+  am4core.ready(function() {
+
+      // Themes begin
+      am4core.useTheme(am4themes_animated);
+      // Themes end
+
+      // Create chart instance
+      var chart = am4core.create("line_graph", am4charts.XYChart);
+
+      // Add data
+      chart.data = [
+      {% for key, value in visitings_date_cnt.items %}
+      {
+        "date": new Date({{ key.year }}, {{ key.month|add:"-1" }}, {{ key.day }}),
+        "value": {{ value }}
+      },
+      {% endfor %}
+      ]
+
+
+      // Create axes
+      var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+
+      // Create value axis
+      var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+      valueAxis.min = 0; // 세로축 최소값
+      valueAxis.max = 40; // 가로축 최대값 (생략하면 최적화됨)
+      
+      // Create series
+      var lineSeries = chart.series.push(new am4charts.LineSeries());
+      lineSeries.dataFields.valueY = "value";
+      lineSeries.dataFields.dateX = "date";
+      lineSeries.name = "Sales";
+      lineSeries.strokeWidth = 3;
+
+      // Add simple bullet
+      var bullet = lineSeries.bullets.push(new am4charts.Bullet());
+      var image = bullet.createChild(am4core.Image);
+      // image.href = "https://www.amcharts.com/lib/images/star.svg";
+      image.href = "{% static 'img/core-img/happiness.png' %}"
+      image.width = 45;
+      image.height = 45;
+      image.horizontalCenter = "middle";
+      image.verticalCenter = "middle";
+
+  }); // end am4core.ready()
+</script>
+
+<!-- HTML -->
+<div class="chartdiv" id="line_graph"></div>

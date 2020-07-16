@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}   
+
+{% block style %}
+
+    .text-center{
+        font-family: 'Gugi', cursive;
+    }
+    .table-warning{
+        font-size: 15px;
+        color: green;
+    }
+    table{
+        text-align: center;
+    }
+    thread{
+        font-weight: bold;
+        font-size: 20pt;
+    }
+    
+    
+{% endblock  %}
+
+{% block content %} 
+    <br><br>
+    <h1 class="text-center">선한 영향력 프로젝트 동참 업체</h1>
+    {% if user.is_superuser %}
+        <a href="{% url 'stores:store_new' %}" class="btn btn-info pull-right">가게 등록하기</a>
+    {% endif %}
+    <br>
+    <br>
+    <hr>
+
+
+    <table class="table table-hover">
+        <thead>
+           <tr class="table-warning">
+                <th scope="col"> <b>가게 이름</b> </th>
+                <th scope="col"> 전화<br> 번호 </th>
+                <th scope="col"> 주소 </th>
+                <th scope="col"> 개점<br> 시간 </th>
+                <th colspan="1"> 폐점<br> 시간 </th>
+                <th scope="col"> 제공 <br> 서비스 </th>
+                <th scope="col"> 방문 횟수 </th>
+           </tr>
+        </thead>
+        <tbody>
+        {% for store in stores %}
+            <tr>
+                {% if store.pk != 1 %}
+                    <th scope="row"><a href="{% url 'stores:detail' store.pk %}">{{ store.name }}</a></th>
+                    <td>{{ store.num }}</td>
+                    <td>{{ store.addr }}</td>
+                    <td>{{ store.open_hour }}</td>
+                    <td>{{ store.closed_hour }}</td>
+                    <td>{{ store.service }}</td>
+                    <td>{{ store.visiting_set.count }}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}    
+        </tbody>
+    </table>    
+    <br><br>
+    <div class="container pagination justify-content-center">
+        {% bootstrap_pagination stores %}               
+    </div>
+        <br><br>
+
+{% endblock %}
